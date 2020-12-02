@@ -30,7 +30,7 @@ public class App {
 		
 		try(SqlSession session = ((SqlSessionFactory) sqlSessionFactory).openSession()) {
 			User user = session.selectOne("getOneById", 1l);
-			LOGGER.info(user);
+			LOGGER.info(user.getIdentityNumber());
 			
 		}
 	}
