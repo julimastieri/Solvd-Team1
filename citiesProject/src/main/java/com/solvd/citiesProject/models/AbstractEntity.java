@@ -3,6 +3,9 @@ package com.solvd.citiesProject.models;
 public abstract class AbstractEntity {
 	private long id;
 
+	protected AbstractEntity(long id) {
+		this.id=id;
+	}
 	public long getId() {
 		return id;
 	}

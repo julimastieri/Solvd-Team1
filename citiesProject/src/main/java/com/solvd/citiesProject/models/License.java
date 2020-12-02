@@ -5,6 +5,12 @@ import java.util.Date;
 public class License extends AbstractEntity {
 	private Date expirationDate;
 	private User driver;
+	
+	public License(long id, Date expirationDate, User driver) {
+		super(id);
+		this.expirationDate = expirationDate;
+		this.driver = driver;
+	}
 	public User getDriver() {
 		return driver;
 	}

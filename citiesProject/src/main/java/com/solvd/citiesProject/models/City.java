@@ -3,8 +3,13 @@ package com.solvd.citiesProject.models;
 public class City extends AbstractEntity {
 	private String name;
 	private int postalCode;
-	// private Country country;
+	private Country country;
 	
+	public City(long id, String name, int postalCode) {
+		super(id);
+		this.name = name;
+		this.postalCode = postalCode;
+	}
 	public String getName() {
 		return name;
 	}
