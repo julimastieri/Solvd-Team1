@@ -1,4 +1,4 @@
-package com.solvd.citiesProject.application.dao.mybatis;
+package com.solvd.citiesProject.dao.mybatis;
 
 import com.solvd.citiesProject.models.Point;
 

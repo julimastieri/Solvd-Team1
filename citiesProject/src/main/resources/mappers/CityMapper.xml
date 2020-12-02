@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.solvd.citiesProject.dao.mybatis.ICityDAO">
+  <resultMap id="CityResultMap" type="City">
+	<id column="id" property="id"/>
+	<result column="name" property="name"/>
+	<result column="postal_code" property="postalCode"/>
+	<association property="country" column="c.country_id" foreignColumn="coun.id"  resultMap="com.solvd.citiesProject.dao.mybatis.ICountryDAO.CountryResultMap"/>
+  </resultMap>
+</mapper>
