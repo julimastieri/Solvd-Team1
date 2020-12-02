@@ -2,11 +2,11 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.solvd.citiesProject.dao.mybatis.IPathDAO">
+<mapper namespace="com.solvd.citiesProject.dao.IPathDAO">
   <resultMap id="PathResultMap" type="Path">
 	<id column="id" property="id"/>
 	<result column="distance" property="distance"/>
-	<association property="pointFrom" column="path.id_point_from" foreignColumn="p.id"  resultMap="com.solvd.citiesProject.dao.mybatis.IPointDAO.PointResultMap"/>
-	<association property="pointTo" column="path.id_point_to" foreignColumn="p.id"  resultMap="com.solvd.citiesProject.dao.mybatis.IPointDAO.PointResultMap"/>
+	<association property="pointFrom" column="path.id_point_from" foreignColumn="p.id"  resultMap="com.solvd.citiesProject.dao.IPointDAO.PointResultMap"/>
+	<association property="pointTo" column="path.id_point_to" foreignColumn="p.id"  resultMap="com.solvd.citiesProject.dao.IPointDAO.PointResultMap"/>
   </resultMap>
 </mapper>

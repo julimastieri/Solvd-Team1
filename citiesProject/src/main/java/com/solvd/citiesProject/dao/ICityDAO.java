@@ -1,4 +1,4 @@
-package com.solvd.citiesProject.dao.mybatis;
+package com.solvd.citiesProject.dao;
 
 import com.solvd.citiesProject.models.City;
 
