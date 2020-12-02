@@ -2,11 +2,11 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.solvd.citiesProject.dao.mybatis.IPointDAO">
+<mapper namespace="com.solvd.citiesProject.dao.IPointDAO">
   <resultMap id="PointResultMap" type="Point">
 	<id column="id" property="id"/>
 	<result column="street" property="street"/>
 	<result column="number" property="addressNumber"/>
-	<association property="city" column="p.city_id" foreignColumn="c.id"  resultMap="com.solvd.citiesProject.dao.mybatis.ICityDAO.CityResultMap"/>
+	<association property="city" column="p.city_id" foreignColumn="c.id"  resultMap="com.solvd.citiesProject.dao.ICityDAO.CityResultMap"/>
   </resultMap>
 </mapper>

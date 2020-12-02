@@ -2,10 +2,10 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.solvd.citiesProject.dao.mybatis.ILicenseDAO">
+<mapper namespace="com.solvd.citiesProject.dao.ILicenseDAO">
   <resultMap id="LicenseResultMap" type="License">
 	<id column="id" property="id"/>
 	<result column="expiration_date" property="expirationDate"/>
-	<association property="driver" column="l.driver_id" foreignColumn="u.id"  resultMap="com.solvd.citiesProject.dao.mybatis.IUserDAO.UserResultMap"/>
+	<association property="driver" column="l.driver_id" foreignColumn="u.id"  resultMap="com.solvd.citiesProject.dao.IUserDAO.UserResultMap"/>
   </resultMap>
 </mapper>

@@ -34,7 +34,6 @@
     <mapper resource="./mappers/UserMapper.xml"/>
 	<mapper resource="./mappers/CityMapper.xml"/>
 	<mapper resource="./mappers/LicenseMapper.xml"/>
-	<mapper resource="./mappers/TripMapper.xml"/>
 	<mapper resource="./mappers/PointMapper.xml"/>
 	<mapper resource="./mappers/TransportMapper.xml"/>
 	<mapper resource="./mappers/PathMapper.xml"/>
