@@ -7,6 +7,14 @@ public class User extends AbstractEntity {
 	private String lastName;
 	private int identityNumber;
 	private Date birthdate;
+	
+	public User(long id, String name, String lastName, int identityNumber, Date birthdate) {
+		super(id);
+		this.name = name;
+		this.lastName = lastName;
+		this.identityNumber = identityNumber;
+		this.birthdate = birthdate;
+	}
 	public String getName() {
 		return name;
 	}
