@@ -15,6 +15,11 @@ public class User extends AbstractEntity {
 		this.identityNumber = identityNumber;
 		this.birthdate = birthdate;
 	}
+	
+	@Override
+	public String toString() {
+		return "User: " + name + " " + lastName + " with identity number: " + identityNumber;
+	}
 	public String getName() {
 		return name;
 	}
