@@ -2,12 +2,18 @@
 <!DOCTYPE mapper 
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.solvd.citiesProject.dao.IUserDAO">
+<mapper namespace="com.solvd.citiesProject.dao.mybatis.UserDAO">
   <resultMap id="UserResultMap" type="User">
 	<id column="id" property="id"/>
 	<result column="name" property="name"/>
-	<result  column="last_name" property="lastName"/>
+	<result column="last_name" property="lastName"/>
 	<result column="identity_number" property="identityNumber"/>
 	<result column="birthdate" property="birthdate"/>
   </resultMap>
+  
+  <select id="getOneById" resultMap="UserResultMap">
+	select *
+	from users u 
+	where u.id = #{id}
+  </select>
 </mapper>

@@ -8,7 +8,7 @@ import com.solvd.citiesProject.models.User;
 public class UserDAO extends MySQLAbstractDAO implements IUserDAO {
 
 	@Override
-	public User save(User e, long id) {
+	public User save(User user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
