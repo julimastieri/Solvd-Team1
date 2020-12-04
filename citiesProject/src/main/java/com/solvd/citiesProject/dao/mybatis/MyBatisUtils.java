@@ -11,7 +11,6 @@ import org.apache.logging.log4j.Logger;
 
 import com.solvd.citiesProject.dao.IUserDAO;
 
-
 public class MyBatisUtils {
 	private Logger logger = LogManager.getLogger(MyBatisUtils.class);
 	private static MyBatisUtils instance;
