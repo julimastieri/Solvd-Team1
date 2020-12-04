@@ -31,7 +31,7 @@ public class MyBatisUtils {
 			logger.error(e);
 		}
 		ssf = new SqlSessionFactoryBuilder().build(inputStream);
-		ssf.getConfiguration().addMapper(IUserDAO.class);
+		
 	}
 	public SqlSessionFactory getSession() {
 		return ssf;

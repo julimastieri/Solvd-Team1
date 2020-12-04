@@ -3,6 +3,8 @@ package com.solvd.citiesProject.dao.mybatis;
 import java.io.IOException;
 import java.util.Optional;
 
+import org.apache.ibatis.annotations.ResultMap;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,13 +28,13 @@ public class UserDAO implements IUserDAO {
 
 	@Override
 	public Optional<User> getOneById(long id) {
-		User user = null;
-		try (SqlSession s = MyBatisUtils.getInstance().getSession().openSession()){
-			user = s.selectOne("getOneById", id);
-		} catch (IOException e) {
-			logger.error(e);
-		} 
-		return Optional.ofNullable(user);
+	Optional<User> user = Optional.empty();
+	try {
+		user = MyBatisUtils.getInstance().getSession().openSession().getMapper(IUserDAO.class).getOneById(id);
+	} catch (IOException e) {
+		logger.error(e);
+	}
+	return user;
 	}
 
 }
