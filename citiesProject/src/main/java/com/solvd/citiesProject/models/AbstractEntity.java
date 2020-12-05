@@ -6,6 +6,9 @@ public abstract class AbstractEntity {
 	protected AbstractEntity(long id) {
 		this.id=id;
 	}
+	public AbstractEntity() {
+		
+	}
 	public long getId() {
 		return id;
 	}
