@@ -20,9 +20,10 @@ public class UserDAO extends MySQLAbstractDAO implements IUserDAO {
 	}
 
 	@Override
-	public Optional<User> getOneById(long id) {
+	public Optional<User> getById(long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	
 }

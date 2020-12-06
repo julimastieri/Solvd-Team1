@@ -17,7 +17,7 @@ public class PointService {
 	}
 	
 	public Optional<Point> getById(long id) {
-		Optional<Point> out = pointDAO.getOneById(id);
+		Optional<Point> out = pointDAO.getById(id);
 		Set<MyPair> connections = new HashSet();
 		//set points connected with the searched point
 		for(Path p : pDAO.getPathsByOrigin(out.get()).get()) {

@@ -30,7 +30,7 @@ public class UserDAO implements IUserDAO {
 	public Optional<User> getOneById(long id) {
 	Optional<User> user = Optional.empty();
 	try {
-		user = MyBatisUtils.getInstance().getSession().openSession().getMapper(IUserDAO.class).getOneById(id);
+		user = MyBatisUtils.getInstance().getSession().openSession().getMapper(IUserDAO.class).getById(id);
 	} catch (IOException e) {
 		logger.error(e);
 	}
