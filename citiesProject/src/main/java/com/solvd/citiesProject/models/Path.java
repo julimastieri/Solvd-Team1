@@ -5,11 +5,13 @@ public class Path extends AbstractEntity{
 	private float distance;
 	private Point from;
 	private Point to;
+	
 	public Path(float distance, Point from, Point to, long id) {
 		super(id);
 		this.distance = distance;
 		this.from = from;
 		this.to = to;
+		this.from.addConnection(to,distance);
 	}
 	public float getDistance() {
 		return distance;
