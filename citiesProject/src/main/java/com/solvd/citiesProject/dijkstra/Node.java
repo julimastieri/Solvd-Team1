@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import com.solvd.citiesProject.models.Path;
 import com.solvd.citiesProject.models.Point;
 
 public class Node {
@@ -13,13 +14,7 @@ public class Node {
 
 	private List<Node> shortestPath = new LinkedList<>();
 
-	private Integer distance = Integer.MAX_VALUE;
-
-	Map<Node, Integer> adjacentNodes = new HashMap<>();
-
-	public void addDestination(Node destination, int distance) {
-		adjacentNodes.put(destination, distance);
-	}
+	private Float distance = Float.MAX_VALUE;
 
 	public Node (Point p) {
 		this.point=p;
@@ -44,19 +39,17 @@ public class Node {
 		this.shortestPath = shortestPath;
 	}
 
-	public Integer getDistance() {
+	public Float getDistance() {
 		return distance;
 	}
 
-	public void setDistance(Integer distance) {
+	public void setDistance(Float distance) {
 		this.distance = distance;
 	}
 
-	public Map<Node, Integer> getAdjacentNodes() {
-		return adjacentNodes;
+	public List<Path> getAdjacentNodes() {
+		return point.getConnections();
 	}
 
-	public void setAdjacentNodes(Map<Node, Integer> adjacentNodes) {
-		this.adjacentNodes = adjacentNodes;
-	}
+
 }
