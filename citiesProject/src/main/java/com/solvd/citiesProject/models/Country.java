@@ -8,6 +8,9 @@ public class Country extends AbstractEntity{
 		this.name = name;
 		this.code = code;
 	}
+	public Country() {
+		
+	}
 	public String getName() {
 		return name;
 	}

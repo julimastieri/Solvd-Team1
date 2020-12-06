@@ -1,6 +1,7 @@
 package com.solvd.citiesProject.dao.mybatis;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 import org.apache.ibatis.annotations.ResultMap;
@@ -35,6 +36,12 @@ public class UserDAO implements IUserDAO {
 		logger.error(e);
 	}
 	return user;
+	}
+
+	@Override
+	public List<User> getAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -8,6 +8,9 @@ public class Transport extends AbstractEntity{
 		this.description = description;
 		this.driver = driver;
 	}
+	public Transport() {
+		
+	}
 	public String getDescription() {
 		return description;
 	}

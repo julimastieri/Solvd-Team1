@@ -10,6 +10,9 @@ public class City extends AbstractEntity {
 		this.name = name;
 		this.postalCode = postalCode;
 	}
+	public City() {
+		
+	}
 	public String getName() {
 		return name;
 	}

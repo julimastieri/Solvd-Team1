@@ -5,13 +5,25 @@ public class Path extends AbstractEntity{
 	private float distance;
 	private Point from;
 	private Point to;
+	private boolean bidirectional;
 	
-	public Path(float distance, Point from, Point to, long id) {
+	public Path(float distance, Point from, Point to, long id, boolean bidirectional) {
 		super(id);
 		this.distance = distance;
 		this.from = from;
 		this.to = to;
+		this.bidirectional = bidirectional;
 		this.from.addConnection(this);
+	}
+	
+	public Path () {
+	}
+	
+	public boolean isBidirectional() {
+		return bidirectional;
+	}
+	public void setBidirectional(boolean bidirectional) {
+		this.bidirectional = bidirectional;
 	}
 	public float getDistance() {
 		return distance;

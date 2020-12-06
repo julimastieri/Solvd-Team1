@@ -15,7 +15,7 @@ public class Point extends AbstractEntity {
 		this.connections = new ArrayList<Path>();
 	}
 	public Point() {
-		super();
+		this.connections = new ArrayList<Path>();
 	}
 
 	public String getStreet() {
@@ -101,7 +101,6 @@ public class Point extends AbstractEntity {
 
 	public void addConnection(Path path) {
 		this.connections.add(path);
-		
 	}
 
 }

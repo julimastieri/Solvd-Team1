@@ -1,8 +1,6 @@
 package com.solvd.citiesProject.services;
 
 import java.util.*;
-import java.util.Optional;
-import java.util.Set;
 
 import com.solvd.citiesProject.dao.*;
 import com.solvd.citiesProject.models.*;
@@ -16,17 +14,18 @@ public class PointService {
 		//pointDAO = new pointDAO();
 	}
 	
-	public List<Point> getAllPoints() {
-		List<Point> out = pointDAO.getAll();
-		List<Path> connections = new ArrayList<Path>();
+	public List<Point> getAll() {
+		List<Point> points = pointDAO.getAll();
+		List<Path> paths = pDAO.getAll();
 		//set points connected with the searched point
-		for(Path p : pDAO.getPathsByPointId(out.get()).get()) {
-			connections.add(new Path(p.getTo(),p.getDistance()));
+		for(Point p: points) {
+			for(Path pa: paths) {
+				if(pa.getFrom().equals(p) || (pa.getTo().equals(p) && pa.isBidirectional())) {
+					p.addConnection(pa);
+				}
+			}
 		}
-			
-		out.get().setConnections(connections);
-		return out;
+		return points;
 	}
 	
-	//TODO save a point
 }

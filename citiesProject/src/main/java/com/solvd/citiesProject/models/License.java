@@ -11,6 +11,9 @@ public class License extends AbstractEntity {
 		this.expirationDate = expirationDate;
 		this.driver = driver;
 	}
+	public License() {
+		
+	}
 	public User getDriver() {
 		return driver;
 	}
