@@ -27,7 +27,7 @@ public class UserDAO implements IUserDAO {
 	}
 
 	@Override
-	public Optional<User> getOneById(long id) {
+	public Optional<User> getById(long id) {
 	Optional<User> user = Optional.empty();
 	try {
 		user = MyBatisUtils.getInstance().getSession().openSession().getMapper(IUserDAO.class).getById(id);
