@@ -7,6 +7,6 @@
 	<id column="id" property="id"/>
 	<result column="name" property="name"/>
 	<result column="postal_code" property="postalCode"/>
-	<association property="country" column="c.country_id" foreignColumn="coun.id"  resultMap="com.solvd.citiesProject.dao.ICountryDAO.CountryResultMap"/>
+	<association property="country" column="c.country_id" foreignColumn="coun.id" columnPrefix="coun_" resultMap="com.solvd.citiesProject.dao.ICountryDAO.CountryResultMap"/>
   </resultMap>
 </mapper>

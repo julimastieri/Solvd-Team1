@@ -6,14 +6,16 @@ public class Path extends AbstractEntity{
 	private Point from;
 	private Point to;
 	private boolean bidirectional;
+	private Transport transport;
 	
-	public Path(float distance, Point from, Point to, long id, boolean bidirectional) {
+	public Path(float distance, Point from, Point to, long id, boolean bidirectional, Transport transport) {
 		super(id);
 		this.distance = distance;
 		this.from = from;
 		this.to = to;
 		this.bidirectional = bidirectional;
 		this.from.addConnection(this);
+		this.transport = transport;
 	}
 	
 	public Path () {
@@ -42,6 +44,14 @@ public class Path extends AbstractEntity{
 	}
 	public void setTo(Point to) {
 		this.to = to;
+	}
+
+	public Transport getTransport() {
+		return transport;
+	}
+
+	public void setTransport(Transport transport) {
+		this.transport = transport;
 	}
 	
 	 

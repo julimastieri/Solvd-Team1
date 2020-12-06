@@ -1,10 +1,5 @@
 package com.solvd.citiesProject.dao;
 
-
-
-
-
-
 import java.util.Optional;
 
 import org.apache.ibatis.annotations.ResultMap;
