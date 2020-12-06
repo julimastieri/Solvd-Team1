@@ -16,5 +16,5 @@ public interface IUserDAO extends IGenericDAO<User> {
 	
 	@Select("Select * from Users u where u.id = #{id}")
 	@ResultMap("UserResultMap")
-	public Optional<User> getOneById(long id);
+	public Optional<User> getById(long id);
 }
