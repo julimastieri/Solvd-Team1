@@ -8,6 +8,6 @@ import com.solvd.citiesProject.models.*;
 public interface IPathDAO extends IGenericDAO<Path> {
 
 	//this method returns the paths that start in the parameter point
-	Optional<List<Path>> getPathsByOrigin(Point p);
+	Optional<List<Path>> getPaths();
 	
 }

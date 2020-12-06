@@ -11,7 +11,7 @@ public class Path extends AbstractEntity{
 		this.distance = distance;
 		this.from = from;
 		this.to = to;
-		this.from.addConnection(to,distance);
+		this.from.addConnection(this);
 	}
 	public float getDistance() {
 		return distance;

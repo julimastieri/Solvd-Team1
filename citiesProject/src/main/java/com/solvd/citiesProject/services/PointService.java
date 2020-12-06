@@ -1,6 +1,6 @@
 package com.solvd.citiesProject.services;
 
-import java.util.HashSet;
+import java.util.*;
 import java.util.Optional;
 import java.util.Set;
 
@@ -16,12 +16,12 @@ public class PointService {
 		//pointDAO = new pointDAO();
 	}
 	
-	public Optional<Point> getById(long id) {
-		Optional<Point> out = pointDAO.getOneById(id);
-		Set<MyPair> connections = new HashSet();
+	public List<Point> getAllPoints() {
+		List<Point> out = pointDAO.getAll();
+		List<Path> connections = new ArrayList<Path>();
 		//set points connected with the searched point
-		for(Path p : pDAO.getPathsByOrigin(out.get()).get()) {
-			connections.add(new MyPair(p.getTo(),p.getDistance()));
+		for(Path p : pDAO.getPathsByPointId(out.get()).get()) {
+			connections.add(new Path(p.getTo(),p.getDistance()));
 		}
 			
 		out.get().setConnections(connections);

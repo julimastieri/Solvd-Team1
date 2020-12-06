@@ -1,19 +1,18 @@
 package com.solvd.citiesProject.models;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 public class Point extends AbstractEntity {
 	private String street;
 	private int addressNumber;
 	private City city;
-	private Set<MyPair> connections;
+	private List<Path> connections;
 	
 	public Point(long id, String street, int addressNumber, City city) {
 		super(id);
 		this.street = street;
 		this.addressNumber = addressNumber;
 		this.city = city;
-		this.connections = new HashSet<MyPair>();
+		this.connections = new ArrayList<Path>();
 	}
 	public Point() {
 		super();
@@ -23,11 +22,11 @@ public class Point extends AbstractEntity {
 		return street;
 	}
 
-	public Set<MyPair> getConnections() {
+	public List<Path> getConnections() {
 		return connections;
 	}
 
-	public void setConnections(Set<MyPair> connections) {
+	public void setConnections(List<Path> connections) {
 		this.connections = connections;
 	}
 
@@ -93,15 +92,15 @@ public class Point extends AbstractEntity {
 	//get the distance from a point to other
 	public float getDistance(Point p) {
 		float out = 0;
-		for(MyPair mp : connections) {
-			if(mp.getLeft().equals(p))
-				return mp.getRight();
+		for(Path path : connections) {
+			if(path.getTo().equals(p)||path.getFrom().equals(p))
+				return path.getDistance();
 		}
 		return out;
 	}
 
-	public void addConnection(Point to, Float distance) {
-		this.connections.add(new MyPair(to, distance));
+	public void addConnection(Path path) {
+		this.connections.add(path);
 		
 	}
 
