@@ -19,6 +19,7 @@ import com.solvd.citiesProject.dijkstra.Dijkstra;
 import com.solvd.citiesProject.models.Path;
 import com.solvd.citiesProject.models.Point;
 import com.solvd.citiesProject.models.User;
+import com.solvd.citiesProject.parsers.MyJsonParser;
 
 public class App {
 	private static final Logger LOGGER = LogManager.getLogger(App.class);
@@ -107,9 +108,11 @@ public class App {
 		}
 		else {
 			path.stream().forEach(p-> LOGGER.info(p.toString()));
+			MyJsonParser.writeJsonFile(path, "result.json");
 		}
 		
 		*/
+
 	}
 
 }
