@@ -53,9 +53,10 @@ public class JaxbApi {
 		
 	}
 	
-	public static void writeXMLFile(List<Path> paths) {
+	public static void writeXMLFile(List<Path> paths, String fileName) {
 		//static method for App to call
 		JAXBContext c;
+		String path = "src/main/resources/" + fileName;
 		try {
 			
 
@@ -71,6 +72,7 @@ public class JaxbApi {
 			trip.setClient(new User());
 			trip.setPaths(paths);
 			mar.marshal(trip, System.out);
+			mar.marshal(trip, new File(path));
 			
 		} catch (JAXBException e) {
 			logger.error(e);

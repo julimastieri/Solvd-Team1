@@ -42,9 +42,11 @@ public class App {
 		
 		//Call to service
 		PointService pointServ = new PointService();
+		UserDAO uDAO = new UserDAO();
+		User client = uDAO.getById(1).get();
 		List<Point> pointList = pointServ.getAll();
 
-	
+	/*
 		LOGGER.info(pointList.size());
 		LOGGER.info(pointList.get(0));
 		LOGGER.info(pointList.get(0).getConnections());
@@ -54,7 +56,7 @@ public class App {
 		LOGGER.info(pointList.get(2).getConnections());
 		LOGGER.info(pointList.get(3));
 		LOGGER.info(pointList.get(3).getConnections());		
-		
+		*/
 		
 		// FINDING A PATH
 		// Creating points
@@ -81,20 +83,14 @@ public class App {
 		pointList.add(c);
 		pointList.add(d);
 		pointList.add(e);
-
 		*/
-		
 		Point destiny = new Point();
 		Point origin = new Point();
-		
-
 		
 		origin = pointList.get(1);
 		destiny = pointList.get(29);
 		
-		
 		Point destinyOutOfPoints = new Point(6,null, 1, 6, 7);
-		
 		
 		//to try one point that is in the map but is unaccesible
 		//points.add(fakeDestiny); //it is disconnected
@@ -122,15 +118,13 @@ public class App {
 		if (path.isEmpty()) {
 			LOGGER.info("Path list empty.");
 		} else {
-
-
+			
 			path.stream().forEach(p -> LOGGER.info("ORIGIN: " + p.getFrom().getId() + "   DESTINY: " + p.getTo().getId() ));
-
-			// MyJsonParser.writeJsonFile(path, "result.json");
 			LOGGER.info(message);
-			JaxbApi.writeXMLFile(path);
-			MyJsonParser.writeJsonFile(path, "test2.json");
+			JaxbApi.writeXMLFile(path, "result.xml");
+			MyJsonParser.writeJsonFile(path, client, "result.json");
 		}
+		
 		LOGGER.info("origin: "+ origin.getId()+" destiny: " +destiny.getId() );
 
 	}
