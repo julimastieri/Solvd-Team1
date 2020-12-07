@@ -16,9 +16,6 @@ VALUES ('Train','1'),
 ('Subway','1'),
 ('Train','3');
 
-
-
-
 #Countries
 INSERT INTO Countries (`name`, `code`) 
 VALUES ('Argentina', 54);
@@ -30,65 +27,36 @@ VALUES ('Tandil','7000','1');
 
 #Points
 INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('9 de Julio','345', -37.328973, -59.136836, '1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Roca','1234',-37.326379,-59.129535,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Sarmiento','2367',-37.330747, -59.144565,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('25 de mayo','2367',-37.336719, -59.140793,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Rivadavia','3333',-37.326038,-59.146934,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Santamarina','222',-37.320578, -59.132780,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Mitre','44',-37.319076, -59.124566,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('11 de septiembre','9867',-37.323171,-59.124052,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Gardel','354',-37.331102,-59.117560,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Larrea','235',-37.334576,-59.111573,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Libertad','345', 37.338971,-59.130542, '1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Estrada','1234',-37.340663,-59.147497,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Payro','2367',-37.331355,-59.149446,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Monsenior','2367',-37.327410,-59.151430,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('San Lorenzo','3333',-37.318892,-59.147917,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Las heras','222',-37.318892,-59.147917,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Garibaldi','44',-37.318680,-59.131807,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Montiel','9867',-37.325185,-59.121188,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Caseros','354',-37.325185,-59.121188,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Accari','235',-37.316510,-59.117674,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Viscali','345',-37.316639,-59.104034, '1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Darragueira','1234',-37.312243,-59.109276,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Chapalaf','2367',-37.311164,-59.092044,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('D A Maradona','10',-37.312455,-59.098565,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Pedersen','3333',37.313786,-59.093721,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Los nogales','222',-37.318892,-59.147917,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Garibaldi','44',-37.318680,-59.131807,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Los Pinos','9867',-37.316817,-59.089736,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Hudson','354',-37.320148,-59.092356,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Yrigoyen','235',-37.323015,-59.090638,'1');
+VALUES ('9 de Julio','345', -37.328973, -59.136836, '1'),
+('Roca','1234',-37.326379,-59.129535,'1'),
+('Sarmiento','2367',-37.330747, -59.144565,'1'),
+('25 de mayo','2367',-37.336719, -59.140793,'1'),
+('Rivadavia','3333',-37.326038,-59.146934,'1'),
+('Santamarina','222',-37.320578, -59.132780,'1'),
+('Mitre','44',-37.319076, -59.124566,'1'),
+('11 de septiembre','9867',-37.323171,-59.124052,'1'),
+('Gardel','354',-37.331102,-59.117560,'1'),
+('Larrea','235',-37.334576,-59.111573,'1'),
+('Libertad','345', -37.338971,-59.130542, '1'),
+('Estrada','1234',-37.340663,-59.147497,'1'),
+('Payro','2367',-37.331355,-59.149446,'1'),
+('Monsenior','2367',-37.327410,-59.151430,'1'),
+('San Lorenzo','3333',-37.318892,-59.147917,'1'),
+('Las heras','222',-37.318892,-59.147917,'1'),
+('Garibaldi','44',-37.318680,-59.131807,'1'),
+('Montiel','9867',-37.325185,-59.121188,'1'),
+('Caseros','354',-37.325185,-59.121188,'1'),
+('Accari','235',-37.316510,-59.117674,'1'),
+('Viscali','345',-37.316639,-59.104034, '1'),
+('Darragueira','1234',-37.312243,-59.109276,'1'),
+('Chapalaf','2367',-37.311164,-59.092044,'1'),
+('D A Maradona','10',-37.312455,-59.098565,'1'),
+('Pedersen','3333',-37.313786,-59.093721,'1'),
+('Los nogales','222',-37.318892,-59.147917,'1'),
+('Garibaldi','44',-37.318680,-59.131807,'1'),
+('Los Pinos','9867',-37.316817,-59.089736,'1'),
+('Hudson','354',-37.320148,-59.092356,'1'),
+('Yrigoyen','235',-37.323015,-59.090638,'1');
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 #Azul City
@@ -97,66 +65,152 @@ VALUES ('Azul','7300','1');
 
 #Points
 INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('9 de Julio','345', -36.328973, -59.136836, '1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Roca','1234',-36.326379,-59.129535,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Sarmiento','2367',-36.330747, -59.144565,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('25 de mayo','2367',-36.336719, -59.140793,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Rivadavia','3333',-36.326038,-59.146934,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Santamarina','222',-36.320578, -59.132780,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Mitre','44',-36.319076, -59.124566,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('11 de septiembre','9867',-36.323171,-59.124052,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Gardel','354',-36.331102,-59.117560,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Larrea','235',-36.334576,-59.111573,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Libertad','345', 36.338971,-59.130542, '1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Estrada','1234',-36.340663,-59.147497,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Payro','2367',-36.331355,-59.149446,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Monsenior','2367',-36.327410,-59.151430,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('San Lorenzo','3333',-36.318892,-59.147917,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Las heras','222',-36.318892,-59.147917,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Garibaldi','44',-36.318680,-59.131807,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Montiel','9867',-36.325185,-59.121188,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Caseros','354',-36.325185,-59.121188,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Accari','235',-36.316510,-59.117674,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Viscali','345',-36.316639,-59.104034, '1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Darragueira','1234',-36.312243,-59.109276,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Chapalaf','2367',-36.311164,-59.092044,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('D A Maradona','10',-36.312455,-59.098565,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Pedersen','3333',36.313786,-59.093721,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Los nogales','222',-36.318892,-59.147917,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Garibaldi','44',-36.318680,-59.131807,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Los Pinos','9867',-36.316817,-59.089736,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Hudson','354',-36.320148,-59.092356,'1');
-INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
-VALUES ('Yrigoyen','235',-36.323015,-59.090638,'1');
+VALUES ('9 de Julio','345', -36.328973, -59.136836, '1'),
+('Roca','1234',-36.326379,-59.129535,'1'),
+('Sarmiento','2367',-36.330747, -59.144565,'1'),
+('25 de mayo','2367',-36.336719, -59.140793,'1'),
+('Rivadavia','3333',-36.326038,-59.146934,'1'),
+('Santamarina','222',-36.320578, -59.132780,'1'),
+('Mitre','44',-36.319076, -59.124566,'1'),
+('11 de septiembre','9867',-36.323171,-59.124052,'1'),
+('Gardel','354',-36.331102,-59.117560,'1'),
+('Larrea','235',-36.334576,-59.111573,'1'),
+('Libertad','345', -36.338971,-59.130542, '1'),
+('Estrada','1234',-36.340663,-59.147497,'1'),
+('Payro','2367',-36.331355,-59.149446,'1'),
+('Monsenior','2367',-36.327410,-59.151430,'1'),
+('San Lorenzo','3333',-36.318892,-59.147917,'1'),
+('Las heras','222',-36.318892,-59.147917,'1'),
+('Garibaldi','44',-36.318680,-59.131807,'1'),
+('Montiel','9867',-36.325185,-59.121188,'1'),
+('Caseros','354',-36.325185,-59.121188,'1'),
+('Accari','235',-36.316510,-59.117674,'1'),
+('Viscali','345',-36.316639,-59.104034, '1'),
+('Darragueira','1234',-36.312243,-59.109276,'1'),
+('Chapalaf','2367',-36.311164,-59.092044,'1'),
+('D A Maradona','10',-36.312455,-59.098565,'1'),
+('Pedersen','3333',-36.313786,-59.093721,'1'),
+('Los nogales','222',-36.318892,-59.147917,'1'),
+('Garibaldi','44',-36.318680,-59.131807,'1'),
+('Los Pinos','9867',-36.316817,-59.089736,'1'),
+('Hudson','354',-36.320148,-59.092356,'1'),
+('Yrigoyen','235',-36.323015,-59.090638,'1');
 
+#---------------------------------------------------------------------------------------------------------------------------------------------------------
+#Olavarria City
+INSERT INTO Cities (`name`,`postal_code`,`country_id`)
+VALUES ('Olavarria','7400','1');
+
+#Points
+INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
+VALUES ('9 de Julio','345', -35.328973, -59.136836, '1'),
+('Roca','1234',-35.326379,-59.129535,'1'),
+('Sarmiento','2367',-35.330747, -59.144565,'1'),
+('25 de mayo','2367',-35.336719, -59.140793,'1'),
+('Rivadavia','3333',-35.326038,-59.146934,'1'),
+('Santamarina','222',-35.320578, -59.132780,'1'),
+('Mitre','44',-35.319076, -59.124566,'1'),
+('11 de septiembre','9867',-35.323171,-59.124052,'1'),
+('Gardel','354',-35.331102,-59.117560,'1'),
+('Larrea','235',-35.334576,-59.111573,'1'),
+('Libertad','345', -35.338971,-59.130542, '1'),
+('Estrada','1234',-35.340663,-59.147497,'1'),
+('Payro','2367',-35.331355,-59.149446,'1'),
+('Monsenior','2367',-35.327410,-59.151430,'1'),
+('San Lorenzo','3333',-35.318892,-59.147917,'1'),
+('Las heras','222',-35.318892,-59.147917,'1'),
+('Garibaldi','44',-35.318680,-59.131807,'1'),
+('Montiel','9867',-35.325185,-59.121188,'1'),
+('Caseros','354',-35.325185,-59.121188,'1'),
+('Accari','235',-35.316510,-59.117674,'1'),
+('Viscali','345',-35.316639,-59.104034, '1'),
+('Darragueira','1234',-35.312243,-59.109276,'1'),
+('Chapalaf','2367',-35.311164,-59.092044,'1'),
+('D A Maradona','10',-35.312455,-59.098565,'1'),
+('Pedersen','3333',-35.313786,-59.093721,'1'),
+('Los nogales','222',-35.318892,-59.147917,'1'),
+('Garibaldi','44',-35.318680,-59.131807,'1'),
+('Los Pinos','9867',-35.316817,-59.089736,'1'),
+('Hudson','354',-35.320148,-59.092356,'1'),
+('Yrigoyen','235',-35.323015,-59.090638,'1');
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------
+#Rauch City
+INSERT INTO Cities (`name`,`postal_code`,`country_id`)
+VALUES ('Rauch','7203','1');
+
+#Points
+INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
+VALUES ('9 de Julio','345', -34.328973, -59.136836, '1'),
+('Roca','1234',-34.326379,-59.129535,'1'),
+('Sarmiento','2367',-34.330747, -59.144565,'1'),
+('25 de mayo','2367',-34.336719, -59.140793,'1'),
+('Rivadavia','3333',-34.326038,-59.146934,'1'),
+('Santamarina','222',-34.320578, -59.132780,'1'),
+('Mitre','44',-34.319076, -59.124566,'1'),
+('11 de septiembre','9867',-34.323171,-59.124052,'1'),
+('Gardel','354',-34.331102,-59.117560,'1'),
+('Larrea','235',-34.334576,-59.111573,'1'),
+('Libertad','345', -34.338971,-59.130542, '1'),
+('Estrada','1234',-34.340663,-59.147497,'1'),
+('Payro','2367',-34.331355,-59.149446,'1'),
+('Monsenior','2367',-34.327410,-59.151430,'1'),
+('San Lorenzo','3333',-34.318892,-59.147917,'1'),
+('Las heras','222',-34.318892,-59.147917,'1'),
+('Garibaldi','44',-34.318680,-59.131807,'1'),
+('Montiel','9867',-34.325185,-59.121188,'1'),
+('Caseros','354',-34.325185,-59.121188,'1'),
+('Accari','235',-34.316510,-59.117674,'1'),
+('Viscali','345',-34.316639,-59.104034, '1'),
+('Darragueira','1234',-34.312243,-59.109276,'1'),
+('Chapalaf','2367',-34.311164,-59.092044,'1'),
+('D A Maradona','10',-34.312455,-59.098565,'1'),
+('Pedersen','3333',-34.313786,-59.093721,'1'),
+('Los nogales','222',-34.318892,-59.147917,'1'),
+('Garibaldi','44',-34.318680,-59.131807,'1'),
+('Los Pinos','9867',-34.316817,-59.089736,'1'),
+('Hudson','354',-34.320148,-59.092356,'1'),
+('Yrigoyen','235',-34.323015,-59.090638,'1');
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------
+#Cachari City
+INSERT INTO Cities (`name`,`postal_code`,`country_id`)
+VALUES ('Cachari','7203','1');
+
+#Points
+INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
+VALUES ('9 de Julio','345', -33.328973, -59.136836, '1'),
+('Roca','1234',-33.326379,-59.129535,'1'),
+('Sarmiento','2367',-33.330747, -59.144565,'1'),
+('25 de mayo','2367',-33.336719, -59.140793,'1'),
+('Rivadavia','3333',-33.326038,-59.146934,'1'),
+('Santamarina','222',-33.320578, -59.132780,'1'),
+('Mitre','44',-33.319076, -59.124566,'1'),
+('11 de septiembre','9867',-33.323171,-59.124052,'1'),
+('Gardel','354',-33.331102,-59.117560,'1'),
+('Larrea','235',-33.334576,-59.111573,'1'),
+('Libertad','345', -33.338971,-59.130542, '1'),
+('Estrada','1234',-33.340663,-59.147497,'1'),
+('Payro','2367',-33.331355,-59.149446,'1'),
+('Monsenior','2367',-33.327410,-59.151430,'1'),
+('San Lorenzo','3333',-33.318892,-59.147917,'1'),
+('Las heras','222',-33.318892,-59.147917,'1'),
+('Garibaldi','44',-33.318680,-59.131807,'1'),
+('Montiel','9867',-33.325185,-59.121188,'1'),
+('Caseros','354',-33.325185,-59.121188,'1'),
+('Accari','235',-33.316510,-59.117674,'1'),
+('Viscali','345',-33.316639,-59.104034, '1'),
+('Darragueira','1234',-33.312243,-59.109276,'1'),
+('Chapalaf','2367',-33.311164,-59.092044,'1'),
+('D A Maradona','10',-33.312455,-59.098565,'1'),
+('Pedersen','3333',-33.313786,-59.093721,'1'),
+('Los nogales','222',-33.318892,-59.147917,'1'),
+('Garibaldi','44',-33.318680,-59.131807,'1'),
+('Los Pinos','9867',-33.316817,-59.089736,'1'),
+('Hudson','354',-33.320148,-59.092356,'1'),
+('Yrigoyen','235',-33.323015,-59.090638,'1');
+
+#---------------------------------------------------------------------------------------------------------------------------------------------------------
 #All Paths
 INSERT INTO Paths (`distance`,`bidirectional`,`id_point_from`,`id_point_to`, `transport_id`)
 VALUES (9,TRUE, 1, 2, 1),

@@ -6,6 +6,9 @@ import java.util.Optional;
 
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlElement;
 
@@ -28,14 +31,13 @@ import com.solvd.citiesProject.parsers.MyJsonParser;
 
 import com.solvd.citiesProject.services.*;
 
-@XmlRootElement(name = "trip")
-@XmlAccessorType(XmlAccessType.FIELD)
+
 public class App {
 
 	private static final Logger LOGGER = LogManager.getLogger(App.class);
 	@XmlElement(name = "path")
 	private static List<Path> pathListXML;
-
+	
 	public static void main(String[] args) {
 		
 		//Call to service
@@ -85,8 +87,7 @@ public class App {
 		Point destiny = new Point();
 		Point origin = new Point();
 		
-		
-		
+
 		
 		origin = pointList.get(1);
 		destiny = pointList.get(29);
@@ -122,13 +123,18 @@ public class App {
 			LOGGER.info("Path list empty.");
 		} else {
 
+
 			path.stream().forEach(p -> LOGGER.info("Point:" + p.getId() ));
+
 			// MyJsonParser.writeJsonFile(path, "result.json");
 			LOGGER.info(message);
+			JaxbApi.writeXMLFile(path);
+			MyJsonParser.writeJsonFile(path, "test2.json");
 		}
 		LOGGER.info("origin: "+ origin.getId()+" destiny: " +destiny.getId() );
 
 	}
+	
 
 	private static Point nearestDestination(Point c, List<Point> points) {
 		double distance = Double.MAX_VALUE;
@@ -149,6 +155,7 @@ public class App {
 		}
 		return false;
 	}
+
 	
 
 }

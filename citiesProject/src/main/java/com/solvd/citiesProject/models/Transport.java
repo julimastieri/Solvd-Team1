@@ -1,7 +1,10 @@
 package com.solvd.citiesProject.models;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Transport extends AbstractEntity{
 	@XmlElement(name="description")
 	private String description;

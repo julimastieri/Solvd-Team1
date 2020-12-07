@@ -1,9 +1,11 @@
 package com.solvd.citiesProject.models;
 
-import java.awt.geom.Point2D;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Path extends AbstractEntity{
 	@XmlElement(name="pointFrom")
 	private Point from;

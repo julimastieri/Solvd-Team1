@@ -3,20 +3,25 @@ package com.solvd.citiesProject.models;
 import java.awt.geom.Point2D;
 import java.util.*;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Point extends AbstractEntity {
 
 	@XmlElement(name = "street")
-
 	private String street;
 	@XmlElement(name = "addressNumber")
 	private int addressNumber;
-	@XmlElement(name = "city")
+	@XmlElement(name = "latitude")
 	private double latitude;
+	@XmlElement(name = "longitude")
 	private double longitude;
-
+	
 	private City city;
+	
 	private List<Path> connections;
 
 	public Point(long id, String street, int addressNumber, double latitude, double longitude) {
@@ -129,5 +134,7 @@ public class Point extends AbstractEntity {
 		 return Point2D.distance(this.getLatitude(), this.getLongitude(), to.getLatitude(), to.getLongitude());
 	 }
 	
-
+	 public void removeConnections() {
+		 this.connections.clear();
+	 }
 }
