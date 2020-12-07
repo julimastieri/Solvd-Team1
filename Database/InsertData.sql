@@ -2,11 +2,22 @@ USE navigator;
 
 #Users
 INSERT INTO Users (`name`,`last_name`,`identity_number`,`birthdate`)
-VALUES ('Julian','Mastieri',41318117,'2008-7-04');
+VALUES ('Julian','Mastieri',41318117,'2008-7-04'),
+ ('Magali','Boulanger',41318123,'2008-11-03'),
+ ('Joshua','Acciarri',41318456,'2008-2-09');
 
 #Transports
 INSERT INTO Transports (`description`,`driver_id`)
-VALUES ('Train','1');
+VALUES ('Train','1'),
+('Bus','2'),
+('Subway','3'),
+('Train','2'),
+('Bus','3'),
+('Subway','1'),
+('Train','3');
+
+
+
 
 #Countries
 INSERT INTO Countries (`name`, `code`) 
@@ -78,9 +89,6 @@ INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
 VALUES ('Hudson','354',-37.320148,-59.092356,'1');
 INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
 VALUES ('Yrigoyen','235',-37.323015,-59.090638,'1');
-#Paths
-INSERT INTO Paths (`distance`,`bidirectional`,`id_point_from`,`id_point_to`, `transport_id`)
-VALUES (9,TRUE, 1, 2, 1);
 
 #---------------------------------------------------------------------------------------------------------------------------------------------------------
 #Azul City
@@ -149,7 +157,7 @@ VALUES ('Hudson','354',-36.320148,-59.092356,'1');
 INSERT INTO Points (`street`,`number`,`latitude`,`longitude`,`city_id`)
 VALUES ('Yrigoyen','235',-36.323015,-59.090638,'1');
 
-#Paths
+#All Paths
 INSERT INTO Paths (`distance`,`bidirectional`,`id_point_from`,`id_point_to`, `transport_id`)
 VALUES (9,TRUE, 1, 2, 1),
 (4,TRUE, 1, 3, 1),
@@ -201,7 +209,8 @@ VALUES (9,TRUE, 1, 2, 1),
 (8,TRUE, 17, 25, 4),
 (13,FALSE, 17, 29, 5),
 (14,TRUE, 18, 20, 6),
-(6,TRUE, 19, 20, 8),
+(14,TRUE, 18, 20, 6),
+(6,TRUE, 19, 20, 7),
 (9,TRUE, 19, 22, 4),
 (2,TRUE, 20, 21, 2),
 (16,TRUE, 23, 30, 7),
