@@ -26,7 +26,7 @@ public class App {
 	
 	public static void main(String[] args) {
 		
-		/*The country of this example is wrong!!!
+		//The country of this example is wrong!!!
 		IPointDAO pointDao = new PointDAO();
 		List<Point> pointList = pointDao.getAll();
 		
@@ -40,8 +40,9 @@ public class App {
 		
 		LOGGER.info(pointList.get(0).getCity().getCountry().getId());
 		LOGGER.info(pointList.get(0).getCity().getCountry().getName());
-		*/
 		
+		
+		/*
 		IPathDAO pathDao = new PathDAO();
 		List<Path> pathList = pathDao.getAll();
 		
@@ -64,6 +65,7 @@ public class App {
 		LOGGER.info(pathList.get(0).getTo().getAddressNumber());
 		
 		LOGGER.info(pathList.size());
+		*/
 		
 		/*
 		IUserDAO myBatisDao = new UserDAO();
@@ -110,7 +112,7 @@ public class App {
 			path.stream().forEach(p-> LOGGER.info(p.toString()));
 			MyJsonParser.writeJsonFile(path, "result.json");
 		}
-		
+		x
 		*/
 
 	}
