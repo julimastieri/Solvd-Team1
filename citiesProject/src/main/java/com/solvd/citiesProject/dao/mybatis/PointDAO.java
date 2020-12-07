@@ -1,6 +1,7 @@
 package com.solvd.citiesProject.dao.mybatis;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,7 +33,7 @@ public class PointDAO implements IPointDAO {
 
 	@Override
 	public List<Point> getAll() {
-		List<Point> pointList = null;
+		List<Point> pointList = new ArrayList<Point>();
 		try {
 			pointList = MyBatisUtils.getInstance().getSession().openSession().getMapper(IPointDAO.class).getAll();
 		} catch (IOException e) {
