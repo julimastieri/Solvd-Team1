@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 public abstract class MySQLAbstractDAO {
 	private static Logger logger = LogManager.getLogger(MySQLAbstractDAO.class);
-	//public static ConnectionPool pool = ...
+	public static ConnectionPool pool = ConnectionPool.getInstance();
 	
 	public static Properties getConfig() {
 		Properties properties = new Properties();
