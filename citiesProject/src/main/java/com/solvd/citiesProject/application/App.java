@@ -123,7 +123,7 @@ public class App {
 			
 			path.stream().forEach(p -> LOGGER.info("ORIGIN: " + p.getFrom().getId() + "   DESTINY: " + p.getTo().getId() ));
 			LOGGER.info(message);
-			JaxbApi.writeXMLFile(path, "result.xml");
+			JaxbApi.writeXMLFile(path, client, "result.xml");
 			MyJsonParser.writeJsonFile(path, client, "result.json");
 		}
 		
