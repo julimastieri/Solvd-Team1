@@ -3,6 +3,8 @@ package com.solvd.citiesProject.services;
 import java.util.*;
 
 import com.solvd.citiesProject.dao.*;
+import com.solvd.citiesProject.dao.mysql.PointDAO;
+import com.solvd.citiesProject.dao.mysql.PathDAO;
 import com.solvd.citiesProject.models.*;
 
 public class PointService {
@@ -10,8 +12,8 @@ public class PointService {
 	private IPointDAO pointDAO;
 
 	public PointService() {
-		//pathDAO = new PathDAO();
-		//pointDAO = new PointDAO();
+		pathDAO = new PathDAO();
+		pointDAO = new PointDAO();
 	}
 	
 	public List<Point> getAll() {

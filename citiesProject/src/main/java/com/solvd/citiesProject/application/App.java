@@ -27,6 +27,8 @@ import com.solvd.citiesProject.models.User;
 import com.solvd.citiesProject.parsers.JaxbApi;
 import com.solvd.citiesProject.parsers.MyJsonParser;
 
+import com.solvd.citiesProject.services.*;
+
 
 @XmlRootElement(name="trip")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -38,66 +40,11 @@ public class App {
 	
 	public static void main(String[] args) {
 		
-		IPathDAO pathDao = new PathDAO();
-		List<Path> pathList = pathDao.getAll();
+		PointService pointServ = new PointService();
+		List<Point> pointList = pointServ.getAll();	
 		
-		LOGGER.info(pathList.get(0));
+		LOGGER.info(pointList.size());
 		
-		/*The country of this example is wrong!!!
-
-		
-		IPointDAO pointDao = new PointDAO();
-		List<Point> pointList = pointDao.getAll();
-		
-		LOGGER.info(pointList.get(0).getId());
-		LOGGER.info(pointList.get(0).getStreet());
-		LOGGER.info(pointList.get(0).getAddressNumber());
-		
-		LOGGER.info(pointList.get(0).getCity().getId());
-		LOGGER.info(pointList.get(0).getCity().getName());
-		LOGGER.info(pointList.get(0).getCity().getPostalCode());
-		
-		LOGGER.info(pointList.get(0).getCity().getCountry().getId());
-		LOGGER.info(pointList.get(0).getCity().getCountry().getName());
-		
-
-		IPathDAO pathDao = new PathDAO();
-		/*
-		List<Path> pathList = pathDao.getAll();
-		
-		LOGGER.info(pathList.get(0).getId());
-		LOGGER.info(pathList.get(0).getDistance());
-		LOGGER.info(pathList.get(0).isBidirectional());
-		
-		LOGGER.info(pathList.get(0).getFrom().getId());
-		LOGGER.info(pathList.get(0).getFrom().getStreet());
-		LOGGER.info(pathList.get(0).getFrom().getAddressNumber());
-		LOGGER.info(pathList.get(0).getFrom().getCity().getId());
-		LOGGER.info(pathList.get(0).getFrom().getCity().getName());
-		LOGGER.info(pathList.get(0).getFrom().getCity().getPostalCode());
-	
-		//LOGGER.info(pointList.get(0).getCity().getCountry().getId());
-		//LOGGER.info(pointList.get(0).getCity().getCountry().getName());
-		
-		LOGGER.info(pathList.get(0).getTo().getId());
-		LOGGER.info(pathList.get(0).getTo().getStreet());
-		LOGGER.info(pathList.get(0).getTo().getAddressNumber());
-		
-		LOGGER.info(pathList.size());
-		
-
-		//JaxbApi.writeXMLFile(pathListXML);
-		
-		/*
-		IUserDAO myBatisDao = new UserDAO();
-		Optional<User> user = myBatisDao.getById(1L);
-		LOGGER.info(user);
-		user.ifPresent(u -> LOGGER.info(u));
-		
-		Optional<User> user2 = myBatisDao.getById(2L);
-		LOGGER.info(user2);
-		user2.ifPresent(u2 -> LOGGER.info(u2));
-	
 		/*
 		//FINDING A PATH
 		//Creating points
