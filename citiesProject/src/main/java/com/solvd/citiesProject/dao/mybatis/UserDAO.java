@@ -3,10 +3,6 @@ package com.solvd.citiesProject.dao.mybatis;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
-
-import org.apache.ibatis.annotations.ResultMap;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.session.SqlSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

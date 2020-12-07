@@ -1,26 +1,34 @@
 package com.solvd.citiesProject.models;
 
 import java.util.*;
+
+import javax.xml.bind.annotation.XmlElement;
+
 public class Point extends AbstractEntity {
-	@Override
-	public String toString() {
-		return "Point [ID = " + getId() + " street=" + street + ", addressNumber=" + addressNumber + ", city=" + city ;
-	}
+
+	@XmlElement(name = "street")
 
 	private String street;
+	@XmlElement(name = "addressNumber")
 	private int addressNumber;
+	@XmlElement(name = "city")
 	private City city;
 	private List<Path> connections;
-	
-	public Point(long id, String street, int addressNumber, City city) {
+
+	public Point(long id, String street, int addressNumber) {
 		super(id);
 		this.street = street;
 		this.addressNumber = addressNumber;
-		this.city = city;
 		this.connections = new ArrayList<Path>();
 	}
+
 	public Point() {
 		this.connections = new ArrayList<Path>();
+	}
+
+	@Override
+	public String toString() {
+		return "pointId: " + getId() + " street: " + street + " addressNumber: " + addressNumber + "\n City: " + city;
 	}
 
 	public String getStreet() {
@@ -38,20 +46,23 @@ public class Point extends AbstractEntity {
 	public void setStreet(String street) {
 		this.street = street;
 	}
+
 	public int getAddressNumber() {
 		return addressNumber;
 	}
+
 	public void setAddressNumber(int addressNumber) {
 		this.addressNumber = addressNumber;
 	}
+
 	public City getCity() {
 		return city;
 	}
+
 	public void setCity(City city) {
 		this.city = city;
 	}
-	
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -77,11 +88,11 @@ public class Point extends AbstractEntity {
 
 		return true;
 	}
-	//get the distance from a point to other
+
 	public float getDistance(Point p) {
 		float out = 0;
-		for(Path path : connections) {
-			if(path.getTo().equals(p)||path.getFrom().equals(p))
+		for (Path path : connections) {
+			if (path.getTo().equals(p) || path.getFrom().equals(p))
 				return path.getDistance();
 		}
 		return out;

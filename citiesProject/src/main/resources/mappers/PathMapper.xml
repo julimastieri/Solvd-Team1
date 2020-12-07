@@ -6,7 +6,9 @@
   <resultMap id="PathResultMap" type="Path">
 	<id column="id" property="id"/>
 	<result column="distance" property="distance"/>
-	<association property="pointFrom" column="path.id_point_from" foreignColumn="p.id"  resultMap="com.solvd.citiesProject.dao.IPointDAO.PointResultMap"/>
-	<association property="pointTo" column="path.id_point_to" foreignColumn="p.id"  resultMap="com.solvd.citiesProject.dao.IPointDAO.PointResultMap"/>
+	<result column="bidirectional" property="bidirectional"/>
+	<association property="transport" column="path.transport_id" foreignColumn="t.id" resultMap="com.solvd.citiesProject.dao.ITransportDAO.TransportResultMap"/>
+	<association property="from" column="path.id_point_from" foreignColumn="p_from.id" columnPrefix="p_from_" resultMap="com.solvd.citiesProject.dao.IPointDAO.PointResultMap"/>
+	<association property="to" column="path.id_point_to" foreignColumn="p_to.id" columnPrefix="p_to_" resultMap="com.solvd.citiesProject.dao.IPointDAO.PointResultMap"/>
   </resultMap>
 </mapper>

@@ -3,20 +3,22 @@ package com.solvd.citiesProject.services;
 import java.util.*;
 
 import com.solvd.citiesProject.dao.*;
+import com.solvd.citiesProject.dao.mysql.PointDAO;
+import com.solvd.citiesProject.dao.mysql.PathDAO;
 import com.solvd.citiesProject.models.*;
 
 public class PointService {
-	private IPathDAO pDAO;
+	private IPathDAO pathDAO;
 	private IPointDAO pointDAO;
 
 	public PointService() {
-		//pDAO = new PathDAO();
-		//pointDAO = new pointDAO();
+		pathDAO = new PathDAO();
+		pointDAO = new PointDAO();
 	}
 	
 	public List<Point> getAll() {
 		List<Point> points = pointDAO.getAll();
-		List<Path> paths = pDAO.getAll();
+		List<Path> paths = pathDAO.getAll();
 		//set points connected with the searched point
 		for(Point p: points) {
 			for(Path pa: paths) {

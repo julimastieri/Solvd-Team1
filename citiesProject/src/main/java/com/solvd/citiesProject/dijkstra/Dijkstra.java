@@ -20,7 +20,7 @@ public class Dijkstra {
 	private static final Logger LOGGER = LogManager.getLogger(Dijkstra.class);
 	public static List<Point> calculateShortestPathFromSource(List<Point> list, Point from, Point to) {
 
-		
+
 
 		List<Node> nodes = convertPointsToNodes(list);
 		Node source = searchNodeByPoint(nodes,from).get();
@@ -60,12 +60,14 @@ public class Dijkstra {
 				LOGGER.info("UNSET: "+ unsettledNodes.toString());
 				LOGGER.info("SET: "+settledNodes.toString());
 			}
+
 			
 			currentNode.cleanAdj();
 			
-			
+
+	
+				
 		}
-		
 			
 	
 		return convertNodesToPoints(result.getShortestPath());
@@ -113,9 +115,12 @@ public class Dijkstra {
 
 	private static void calculateMinimumDistance(Node evaluationNode, Float edgeWeigh, Node sourceNode) {
 		float sourceDistance = sourceNode.getDistance();
+
 		
 		//LOGGER.info("ANTERIOR: " + evaluationNode.getDistance());
 		//LOGGER.info("nueva: " + (sourceDistance + edgeWeigh));
+
+		
 		if (sourceDistance + edgeWeigh < evaluationNode.getDistance()) {
 			
 			evaluationNode.setDistance(sourceDistance + edgeWeigh);

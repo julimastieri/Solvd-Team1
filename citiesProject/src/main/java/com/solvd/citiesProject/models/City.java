@@ -1,8 +1,13 @@
 package com.solvd.citiesProject.models;
 
+import javax.xml.bind.annotation.XmlElement;
+
 public class City extends AbstractEntity {
+	@XmlElement(name="name")
 	private String name;
+	@XmlElement(name="postalCode")
 	private int postalCode;
+	@XmlElement(name="country")
 	private Country country;
 	
 	public City(long id, String name, int postalCode) {
@@ -11,7 +16,11 @@ public class City extends AbstractEntity {
 		this.postalCode = postalCode;
 	}
 	public City() {
-		
+	}
+	@Override
+	public String toString() {
+		return "cityId: " + getId() + " name: " + name + " postalCode " + postalCode 
+				+ " \n country: " + country;
 	}
 	public String getName() {
 		return name;
