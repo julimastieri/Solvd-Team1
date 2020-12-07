@@ -87,13 +87,13 @@ public class App {
 		Point destiny = new Point();
 		Point origin = new Point();
 		
-
+		
+		Point destinyOutOfPoints = new Point(500,null, 1, -37.3287, -59.135);
 		
 		origin = pointList.get(1);
-		destiny = pointList.get(29);
+		destiny = pointList.get(50);
 		
 		
-		Point destinyOutOfPoints = new Point(6,null, 1, 6, 7);
 		
 		
 		//to try one point that is in the map but is unaccesible

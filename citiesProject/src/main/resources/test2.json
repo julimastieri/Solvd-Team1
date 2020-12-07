@@ -1,25 +1,7 @@
 {
   "paths" : [ {
-    "id" : 1,
+    "id" : 7,
     "from" : {
-      "id" : 1,
-      "street" : "9 de Julio",
-      "addressNumber" : 345,
-      "latitude" : -37.328973,
-      "longitude" : -59.136836,
-      "city" : {
-        "id" : 1,
-        "name" : "Tandil",
-        "postalCode" : 7000,
-        "country" : {
-          "id" : 1,
-          "name" : "Argentina",
-          "code" : 54
-        }
-      },
-      "connections" : [ ]
-    },
-    "to" : {
       "id" : 2,
       "street" : "Roca",
       "addressNumber" : 1234,
@@ -37,147 +19,12 @@
       },
       "connections" : [ ]
     },
-    "bidirectional" : true,
-    "transport" : {
-      "id" : 1,
-      "description" : "Train",
-      "driver" : {
-        "id" : 1,
-        "name" : "Julian",
-        "lastName" : "Mastieri",
-        "identityNumber" : 41318117,
-        "birthdate" : 1215140400000
-      }
-    },
-    "distance" : 9.0
-  }, {
-    "id" : 2,
-    "from" : {
-      "id" : 1,
-      "street" : "9 de Julio",
-      "addressNumber" : 345,
-      "latitude" : -37.328973,
-      "longitude" : -59.136836,
-      "city" : {
-        "id" : 1,
-        "name" : "Tandil",
-        "postalCode" : 7000,
-        "country" : {
-          "id" : 1,
-          "name" : "Argentina",
-          "code" : 54
-        }
-      },
-      "connections" : [ ]
-    },
     "to" : {
-      "id" : 3,
-      "street" : "Sarmiento",
-      "addressNumber" : 2367,
-      "latitude" : -37.330747,
-      "longitude" : -59.144565,
-      "city" : {
-        "id" : 1,
-        "name" : "Tandil",
-        "postalCode" : 7000,
-        "country" : {
-          "id" : 1,
-          "name" : "Argentina",
-          "code" : 54
-        }
-      },
-      "connections" : [ ]
-    },
-    "bidirectional" : true,
-    "transport" : {
-      "id" : 1,
-      "description" : "Train",
-      "driver" : {
-        "id" : 1,
-        "name" : "Julian",
-        "lastName" : "Mastieri",
-        "identityNumber" : 41318117,
-        "birthdate" : 1215140400000
-      }
-    },
-    "distance" : 4.0
-  }, {
-    "id" : 11,
-    "from" : {
-      "id" : 3,
-      "street" : "Sarmiento",
-      "addressNumber" : 2367,
-      "latitude" : -37.330747,
-      "longitude" : -59.144565,
-      "city" : {
-        "id" : 1,
-        "name" : "Tandil",
-        "postalCode" : 7000,
-        "country" : {
-          "id" : 1,
-          "name" : "Argentina",
-          "code" : 54
-        }
-      },
-      "connections" : [ ]
-    },
-    "to" : {
-      "id" : 14,
-      "street" : "Monsenior",
-      "addressNumber" : 2367,
-      "latitude" : -37.32741,
-      "longitude" : -59.15143,
-      "city" : {
-        "id" : 1,
-        "name" : "Tandil",
-        "postalCode" : 7000,
-        "country" : {
-          "id" : 1,
-          "name" : "Argentina",
-          "code" : 54
-        }
-      },
-      "connections" : [ ]
-    },
-    "bidirectional" : true,
-    "transport" : {
-      "id" : 1,
-      "description" : "Train",
-      "driver" : {
-        "id" : 1,
-        "name" : "Julian",
-        "lastName" : "Mastieri",
-        "identityNumber" : 41318117,
-        "birthdate" : 1215140400000
-      }
-    },
-    "distance" : 9.0
-  }, {
-    "id" : 40,
-    "from" : {
-      "id" : 14,
-      "street" : "Monsenior",
-      "addressNumber" : 2367,
-      "latitude" : -37.32741,
-      "longitude" : -59.15143,
-      "city" : {
-        "id" : 1,
-        "name" : "Tandil",
-        "postalCode" : 7000,
-        "country" : {
-          "id" : 1,
-          "name" : "Argentina",
-          "code" : 54
-        }
-      },
-      "connections" : [ ]
-    },
-    "to" : {
-      "id" : 19,
-      "street" : "Caseros",
-      "addressNumber" : 354,
-      "latitude" : -37.325185,
-      "longitude" : -59.121188,
+      "id" : 26,
+      "street" : "Los nogales",
+      "addressNumber" : 222,
+      "latitude" : -37.318892,
+      "longitude" : -59.147917,
       "city" : {
         "id" : 1,
         "name" : "Tandil",
@@ -202,13 +49,13 @@
         "birthdate" : 1215140400000
       }
     },
-    "distance" : 1.0
+    "distance" : 7.0
   }, {
-    "id" : 45,
+    "id" : 127,
     "from" : {
-      "id" : 15,
-      "street" : "San Lorenzo",
-      "addressNumber" : 3333,
+      "id" : 26,
+      "street" : "Los nogales",
+      "addressNumber" : 222,
       "latitude" : -37.318892,
       "longitude" : -59.147917,
       "city" : {
@@ -224,11 +71,11 @@
       "connections" : [ ]
     },
     "to" : {
-      "id" : 19,
-      "street" : "Caseros",
-      "addressNumber" : 354,
-      "latitude" : -37.325185,
-      "longitude" : -59.121188,
+      "id" : 3,
+      "street" : "Sarmiento",
+      "addressNumber" : 2367,
+      "latitude" : -37.330747,
+      "longitude" : -59.144565,
       "city" : {
         "id" : 1,
         "name" : "Tandil",
@@ -241,160 +88,7 @@
       },
       "connections" : [ ]
     },
-    "bidirectional" : true,
-    "transport" : {
-      "id" : 6,
-      "description" : "Subway",
-      "driver" : {
-        "id" : 1,
-        "name" : "Julian",
-        "lastName" : "Mastieri",
-        "identityNumber" : 41318117,
-        "birthdate" : 1215140400000
-      }
-    },
-    "distance" : 1.0
-  }, {
-    "id" : 44,
-    "from" : {
-      "id" : 15,
-      "street" : "San Lorenzo",
-      "addressNumber" : 3333,
-      "latitude" : -37.318892,
-      "longitude" : -59.147917,
-      "city" : {
-        "id" : 1,
-        "name" : "Tandil",
-        "postalCode" : 7000,
-        "country" : {
-          "id" : 1,
-          "name" : "Argentina",
-          "code" : 54
-        }
-      },
-      "connections" : [ ]
-    },
-    "to" : {
-      "id" : 25,
-      "street" : "Pedersen",
-      "addressNumber" : 3333,
-      "latitude" : 37.313786,
-      "longitude" : -59.093721,
-      "city" : {
-        "id" : 1,
-        "name" : "Tandil",
-        "postalCode" : 7000,
-        "country" : {
-          "id" : 1,
-          "name" : "Argentina",
-          "code" : 54
-        }
-      },
-      "connections" : [ ]
-    },
-    "bidirectional" : true,
-    "transport" : {
-      "id" : 1,
-      "description" : "Train",
-      "driver" : {
-        "id" : 1,
-        "name" : "Julian",
-        "lastName" : "Mastieri",
-        "identityNumber" : 41318117,
-        "birthdate" : 1215140400000
-      }
-    },
-    "distance" : 2.0
-  }, {
-    "id" : 48,
-    "from" : {
-      "id" : 17,
-      "street" : "Garibaldi",
-      "addressNumber" : 44,
-      "latitude" : -37.31868,
-      "longitude" : -59.131807,
-      "city" : {
-        "id" : 1,
-        "name" : "Tandil",
-        "postalCode" : 7000,
-        "country" : {
-          "id" : 1,
-          "name" : "Argentina",
-          "code" : 54
-        }
-      },
-      "connections" : [ ]
-    },
-    "to" : {
-      "id" : 25,
-      "street" : "Pedersen",
-      "addressNumber" : 3333,
-      "latitude" : 37.313786,
-      "longitude" : -59.093721,
-      "city" : {
-        "id" : 1,
-        "name" : "Tandil",
-        "postalCode" : 7000,
-        "country" : {
-          "id" : 1,
-          "name" : "Argentina",
-          "code" : 54
-        }
-      },
-      "connections" : [ ]
-    },
-    "bidirectional" : true,
-    "transport" : {
-      "id" : 4,
-      "description" : "Train",
-      "driver" : {
-        "id" : 2,
-        "name" : "Magali",
-        "lastName" : "Boulanger",
-        "identityNumber" : 41318123,
-        "birthdate" : 1225677600000
-      }
-    },
-    "distance" : 8.0
-  }, {
-    "id" : 47,
-    "from" : {
-      "id" : 17,
-      "street" : "Garibaldi",
-      "addressNumber" : 44,
-      "latitude" : -37.31868,
-      "longitude" : -59.131807,
-      "city" : {
-        "id" : 1,
-        "name" : "Tandil",
-        "postalCode" : 7000,
-        "country" : {
-          "id" : 1,
-          "name" : "Argentina",
-          "code" : 54
-        }
-      },
-      "connections" : [ ]
-    },
-    "to" : {
-      "id" : 24,
-      "street" : "D A Maradona",
-      "addressNumber" : 10,
-      "latitude" : -37.312455,
-      "longitude" : -59.098565,
-      "city" : {
-        "id" : 1,
-        "name" : "Tandil",
-        "postalCode" : 7000,
-        "country" : {
-          "id" : 1,
-          "name" : "Argentina",
-          "code" : 54
-        }
-      },
-      "connections" : [ ]
-    },
-    "bidirectional" : true,
+    "bidirectional" : false,
     "transport" : {
       "id" : 3,
       "description" : "Subway",
@@ -406,15 +100,15 @@
         "birthdate" : 1202522400000
       }
     },
-    "distance" : 5.0
+    "distance" : 8.0
   }, {
-    "id" : 56,
+    "id" : 10,
     "from" : {
-      "id" : 24,
-      "street" : "D A Maradona",
-      "addressNumber" : 10,
-      "latitude" : -37.312455,
-      "longitude" : -59.098565,
+      "id" : 3,
+      "street" : "Sarmiento",
+      "addressNumber" : 2367,
+      "latitude" : -37.330747,
+      "longitude" : -59.144565,
       "city" : {
         "id" : 1,
         "name" : "Tandil",
@@ -428,11 +122,11 @@
       "connections" : [ ]
     },
     "to" : {
-      "id" : 30,
-      "street" : "Yrigoyen",
-      "addressNumber" : 235,
-      "latitude" : -37.323015,
-      "longitude" : -59.090638,
+      "id" : 5,
+      "street" : "Rivadavia",
+      "addressNumber" : 3333,
+      "latitude" : -37.326038,
+      "longitude" : -59.146934,
       "city" : {
         "id" : 1,
         "name" : "Tandil",
@@ -447,8 +141,59 @@
     },
     "bidirectional" : false,
     "transport" : {
-      "id" : 6,
-      "description" : "Subway",
+      "id" : 5,
+      "description" : "Bus",
+      "driver" : {
+        "id" : 3,
+        "name" : "Joshua",
+        "lastName" : "Acciarri",
+        "identityNumber" : 41318456,
+        "birthdate" : 1202522400000
+      }
+    },
+    "distance" : 1.0
+  }, {
+    "id" : 118,
+    "from" : {
+      "id" : 5,
+      "street" : "Rivadavia",
+      "addressNumber" : 3333,
+      "latitude" : -37.326038,
+      "longitude" : -59.146934,
+      "city" : {
+        "id" : 1,
+        "name" : "Tandil",
+        "postalCode" : 7000,
+        "country" : {
+          "id" : 1,
+          "name" : "Argentina",
+          "code" : 54
+        }
+      },
+      "connections" : [ ]
+    },
+    "to" : {
+      "id" : 51,
+      "street" : "Viscali",
+      "addressNumber" : 345,
+      "latitude" : -36.316639,
+      "longitude" : -59.104034,
+      "city" : {
+        "id" : 1,
+        "name" : "Tandil",
+        "postalCode" : 7000,
+        "country" : {
+          "id" : 1,
+          "name" : "Argentina",
+          "code" : 54
+        }
+      },
+      "connections" : [ ]
+    },
+    "bidirectional" : false,
+    "transport" : {
+      "id" : 1,
+      "description" : "Train",
       "driver" : {
         "id" : 1,
         "name" : "Julian",
@@ -457,13 +202,13 @@
         "birthdate" : 1215140400000
       }
     },
-    "distance" : 3.0
+    "distance" : 29.0
   } ],
   "client" : {
     "id" : 1,
     "name" : "Joshua",
     "lastName" : "Acciarri",
     "identityNumber" : 123,
-    "birthdate" : 1607381243792
+    "birthdate" : 1607383075223
   }
 }
