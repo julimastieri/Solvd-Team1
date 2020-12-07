@@ -96,7 +96,7 @@ public class App {
 		}
 
 		// CALCULATING PATH
-		List<Point> path = Dijkstra.calculateShortestPathFromSource(points, a, c);
+		List<Point> path = Dijkstra.calculateShortestPathFromSource(points, origin, destiny);
 		if (path.isEmpty()) {
 			LOGGER.info("Path list empty.");
 		} else {
