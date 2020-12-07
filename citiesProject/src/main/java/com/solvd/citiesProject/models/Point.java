@@ -1,5 +1,6 @@
 package com.solvd.citiesProject.models;
 
+import java.awt.geom.Point2D;
 import java.util.*;
 
 import javax.xml.bind.annotation.XmlElement;
@@ -123,5 +124,10 @@ public class Point extends AbstractEntity {
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
 	}
+	
+	 public double getStraightDistance(Point to) {
+		 return Point2D.distance(this.getLatitude(), this.getLongitude(), to.getLatitude(), to.getLongitude());
+	 }
+	
 
 }

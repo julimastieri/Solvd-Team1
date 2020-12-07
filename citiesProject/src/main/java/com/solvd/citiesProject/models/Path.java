@@ -1,5 +1,7 @@
 package com.solvd.citiesProject.models;
 
+import java.awt.geom.Point2D;
+
 import javax.xml.bind.annotation.XmlElement;
 
 public class Path extends AbstractEntity{
@@ -11,12 +13,19 @@ public class Path extends AbstractEntity{
 	private boolean bidirectional;
 	@XmlElement(name="transport")
 	private Transport transport;
+	@XmlElement(name="distance")
+	private float distance;
 	
-	public Path(Point from, Point to, long id, boolean bidirectional,  Transport trans) {
+	public void setDistance(float distance) {
+		this.distance = distance;
+	}
+
+	public Path(float d,Point from, Point to, long id, boolean bidirectional,  Transport trans) {
 		super(id);
 		this.bidirectional = bidirectional;
 		this.from = from;
 		this.to = to;
+		this.distance=d;
 		this.transport = trans;
 		from.addConnection(this);
 		if (bidirectional) 
@@ -52,8 +61,8 @@ public class Path extends AbstractEntity{
 		this.bidirectional = bidirectional;
 	}
 	public float getDistance() {
-		return 0;
-	}
+		return distance;
+		}
 	public Point getFrom() {
 		return from;
 	}
@@ -78,6 +87,5 @@ public class Path extends AbstractEntity{
 		this.transport = transport;
 	}
 	
-	 
-	
+
 }

@@ -1,7 +1,5 @@
 package com.solvd.citiesProject.application;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -30,60 +28,104 @@ import com.solvd.citiesProject.parsers.MyJsonParser;
 
 import com.solvd.citiesProject.services.*;
 
-
-@XmlRootElement(name="trip")
+@XmlRootElement(name = "trip")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class App {
-	
+
 	private static final Logger LOGGER = LogManager.getLogger(App.class);
-	@XmlElement(name="path")
+	@XmlElement(name = "path")
 	private static List<Path> pathListXML;
-	
+
 	public static void main(String[] args) {
-		PointService pointServ = new PointService();
-		List<Point> pointList = pointServ.getAll();	
-		
+		/*PointService pointServ = new PointService();
+		List<Point> pointList = pointServ.getAll();
+
 		LOGGER.info(pointList.get(0).getConnections());
-		LOGGER.info(pointList.get(1).getConnections());
+		LOGGER.info(pointList.get(1).getConnections());*/
 
-		/*/FINDING A PATH
-		//Creating points
-		//Point A = new Point(1,null,1);
-		//Point B = new Point(2,null,1);
-		//Point C = new Point(3,null,1);
-		//Point D = new Point(4,null,1);
-		//Point E = new Point(5,null,1);
+		// FINDING A PATH
+		// Creating points
+		Point a = new Point(1, null, 1, 20, 20);
+		Point b = new Point(2, null, 1, 15, 25);
+		Point c = new Point(3, null, 1, 30, 26);
+		Point d = new Point(4, null, 1, 12, 3);
+		Point e = new Point(5, null, 1, 5, 8);
 
-		//Creating Paths
-		//distance, from, to, id
-		//Path p1 = new Path(1, A, D, 1, true, new Transport());
-		//Path p2 = new Path(6, A, B, 2, true, new Transport());
-		//Path p3 = new Path(1, B, D, 3, true, new Transport());
-		//Path p4 = new Path(5, B, C, 4, true, new Transport());
-		//Path p5 = new Path(2, B, E, 5, true, new Transport());
-		//Path p6 = new Path(5, E, C, 6, true, new Transport());
-		//Path p7 = new Path(1, D, E, 7, true, new Transport());
-
-	
+		// Creating Paths
+		// distance, from, to, id
+		Path p1 = new Path(1, a, d, 1, true, new Transport());
+		Path p2 = new Path(6, a, b, 2, true, new Transport());
+		Path p3 = new Path(1, b, d, 3, true, new Transport());
+		Path p4 = new Path(5, b, c, 4, true, new Transport());
+		Path p5 = new Path(2, b, e, 5, true, new Transport());
+		Path p6 = new Path(5, e, c, 6, true, new Transport());
+		Path p7 = new Path(1, d, e, 7, true, new Transport());
 
 		List<Point> points = new ArrayList<Point>();
-		points.add(A);
-		points.add(B);
-		points.add(C);
-		points.add(D);
-		points.add(E);
+		points.add(a);
+		points.add(b);
+		points.add(c);
+		points.add(d);
+		points.add(e);
 
-		List<Point> path = Dijkstra.calculateShortestPathFromSource(points, A, C);
-		if (path.isEmpty()) {
-			LOGGER.info("Path list empty");
+		
+		
+		Point destiny = new Point();
+		Point origin = new Point();
+		
+		Point fakeDestiny = new Point(6,null, 1, 6, 7);
+		
+		
+		origin = a;
+		destiny = fakeDestiny;
+		
+		String message= " ";
+		
+		
+		// ASK USER FOR 2 POINTS
+		while (!existInMap(origin, points)) {
+			LOGGER.info("It isn't a valid origin.");
+			// read from stream
 		}
-		else {
 
-			path.stream().forEach(p-> LOGGER.info(p.getId()));
-			//MyJsonParser.writeJsonFile(path, "result.json");
-		}	
-		 */
+		// FIND NEAREST DESTINATION
+		if (!existInMap(destiny, points)) {
+			destiny = nearestDestination(destiny, points);
+			LOGGER.info("The near destiny is: "+destiny.getId());
+			message = "From "+ destiny.getStreet() + " "+ destiny.getAddressNumber()+ " to your original destiny you have to go by taxi.";
+		}
 
+		// CALCULATING PATH
+		List<Point> path = Dijkstra.calculateShortestPathFromSource(points, a, c);
+		if (path.isEmpty()) {
+			LOGGER.info("Path list empty.");
+		} else {
+
+			path.stream().forEach(p -> LOGGER.info(p.getId()));
+			// MyJsonParser.writeJsonFile(path, "result.json");
+			LOGGER.info(message);
+		}
+
+	}
+
+	private static Point nearestDestination(Point c, List<Point> points) {
+		double distance = Double.MAX_VALUE;
+		Point nearestPoint = new Point();
+		for (Point p : points) {
+			if (c.getStraightDistance(p) < distance) {
+				distance = c.getStraightDistance(p);
+				nearestPoint = p;
+			}
+		}
+		return nearestPoint;
+	}
+
+	public static boolean existInMap(Point point, List<Point> points) {
+		for (Point p : points) {
+			if (p.equals(point))
+				return true;
+		}
+		return false;
 	}
 
 }
