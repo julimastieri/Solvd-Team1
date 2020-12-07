@@ -49,7 +49,7 @@ public class JaxbApi {
 		
 	}
 	
-	/*public static void writeXMLFile(List<Path> paths) {
+	public static void writeXMLFile(List<Path> paths) {
 		//static method for App to call
 		try {
 			
@@ -58,7 +58,10 @@ public class JaxbApi {
 			
 			Marshaller mar = c.createMarshaller();
 			mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-			// system out will be changed to xml file output
+			paths.forEach(p -> {
+				p.getFrom().removeConnections();
+				p.getTo().removeConnections();
+			});
 			Trip trip = new Trip();
 			trip.setClient(new User());
 			trip.setPaths(paths);
@@ -67,6 +70,6 @@ public class JaxbApi {
 		} catch (JAXBException e) {
 			logger.error(e);
 		}
-	}*/
+	}
 	
 }

@@ -134,5 +134,7 @@ public class Point extends AbstractEntity {
 		 return Point2D.distance(this.getLatitude(), this.getLongitude(), to.getLatitude(), to.getLongitude());
 	 }
 	
-
+	 public void removeConnections() {
+		 this.connections.clear();
+	 }
 }
