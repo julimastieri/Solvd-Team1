@@ -16,7 +16,6 @@ public class Dijkstra {
 	public static List<Point> calculateShortestPathFromSource(List<Point> list, Point from, Point to) {
 
 		Node source = new Node(from);
-		Node goal = new Node(to);
 
 		List<Node> nodes = convertPointsToNodes(list);
 		source.setDistance((float) 0);
@@ -46,7 +45,7 @@ public class Dijkstra {
 			}
 			settledNodes.add(currentNode);
 		}
-		Optional<Node> node = nodes.stream().filter(n->n.getPoint().equals(goal)).findFirst();
+		Optional<Node> node = nodes.stream().filter(n->n.getPoint().equals(to)).findFirst();
 		if(node.isPresent()) {
 			List<Node> out = node.get().getShortestPath();
 			return convertNodesToPoints(out);
@@ -85,6 +84,10 @@ public class Dijkstra {
 
 	private static void calculateMinimumDistance(Node evaluationNode, Float edgeWeigh, Node sourceNode) {
 		float sourceDistance = sourceNode.getDistance();
+		System.out.println(sourceNode.getPoint());
+		System.out.println(sourceDistance);
+		System.out.println(edgeWeigh);
+		System.out.println(sourceDistance + edgeWeigh < evaluationNode.getDistance());
 		if (sourceDistance + edgeWeigh < evaluationNode.getDistance()) {
 			evaluationNode.setDistance(sourceDistance + edgeWeigh);
 			LinkedList<Node> shortestPath = new LinkedList<>(sourceNode.getShortestPath());

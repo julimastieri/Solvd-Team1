@@ -21,17 +21,27 @@ public class UserDAO extends MySQLAbstractDAO implements IUserDAO {
 	@Override
 	public Optional<User> getById(long id) {
 		User user = null;
-		ResultSet rs = null;
-		try (Connection conn = pool.getConnection(); 
-				PreparedStatement pr = conn.prepareStatement(GET_USER);
+		Connection conn = null;
+		try {
+			conn = pool.getConnection();
+		} catch (InterruptedException | SQLException e1) {
+			logger.info(e1);
+		} 
+		try (PreparedStatement pr = conn.prepareStatement(GET_USER);
+				ResultSet rs = pr.executeQuery();
 				) {
 			pr.setLong(1, id);
-			rs = pr.executeQuery();
 			if (rs.next()) {
 				user = populateUser(rs);
 			}
 		} catch (Exception e) {
 			logger.error(e);
+		} finally {
+			try {
+				pool.releaseConnection(conn);
+			} catch (InterruptedException e) {
+				logger.info(e);
+			}
 		}
 		return Optional.ofNullable(user);
 	}

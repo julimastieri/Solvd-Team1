@@ -22,7 +22,7 @@ public class PointService {
 		//set points connected with the searched point
 		for(Point p: points) {
 			for(Path pa: paths) {
-				if(pa.getFrom().getId() == p.getId() || (pa.getTo().getId() == p.getId() && pa.isBidirectional())) {
+				if(pa.getFrom().equals(p) || (pa.getTo().equals(p) && pa.isBidirectional())) {
 					p.addConnection(pa);
 				}
 			}

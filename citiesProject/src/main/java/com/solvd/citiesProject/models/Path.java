@@ -14,6 +14,18 @@ public class Path extends AbstractEntity{
 	@XmlElement(name="transport")
 	private Transport transport;
 	
+	public Path(float distance, Point from, Point to, long id, boolean bidirectional,  Transport trans) {
+		super(id);
+		this.distance = distance;
+		this.bidirectional = bidirectional;
+		this.from = from;
+		this.to = to;
+		this.transport = trans;
+		from.addConnection(this);
+		if (bidirectional) 
+			to.addConnection(this);
+	}
+	
 	public Path(float distance, long id, boolean bidirectional) {
 		super(id);
 		this.distance = distance;
@@ -47,12 +59,15 @@ public class Path extends AbstractEntity{
 		return from;
 	}
 	public void setFrom(Point from) {
+		from.addConnection(this);
 		this.from = from;
 	}
 	public Point getTo() {
 		return to;
 	}
 	public void setTo(Point to) {
+		if (bidirectional) 
+			to.addConnection(this);
 		this.to = to;
 	}
 
