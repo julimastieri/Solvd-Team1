@@ -22,7 +22,7 @@ public class MyJsonParser {
 	static Logger logger = LogManager.getLogger(MyJsonParser.class);
 	static ObjectMapper mapper = new ObjectMapper();
 	
-	public static void writeTest(String fileName) {
+	/*public static void writeTest(String fileName) {
 		String path = "src/main/resources/" + fileName;
 		String jsonObj = null;
 		List<Path> paths = new ArrayList<Path>();
@@ -49,13 +49,13 @@ public class MyJsonParser {
 			logger.error(e);
 		}
 		logger.info("\nGenerated Json: \n" + jsonObj + "\n");
-	}
+	}*/
 	
-	public static void writeJsonFile(List<Path> paths, String fileName) {
+	public static void writeJsonFile(List<Path> paths, User client, String fileName) {
 		String path = "src/main/resources/" + fileName;
 		String jsonObj = null;
 		Trip trip = new Trip();
-		trip.setClient(new User(1l, "Joshua", "Acciarri", 123, new Date()));
+		trip.setClient(client);
 		for(Path p : paths) {
 			p.getFrom().removeConnections();
 			p.getTo().removeConnections();

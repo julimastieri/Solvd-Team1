@@ -11,14 +11,12 @@ public class Path extends AbstractEntity{
 	private Point from;
 	@XmlElement(name="pointTo")
 	private Point to;
-	@XmlElement(name="bidirectional")
-	private boolean bidirectional;
 	@XmlElement(name="transport")
 	private Transport transport;
 	@XmlElement(name="distance")
 	private float distance;
 	
-	
+	private boolean bidirectional;
 
 	public Path(float d,Point from, Point to, long id, boolean bidirectional,  Transport trans) {
 		super(id);

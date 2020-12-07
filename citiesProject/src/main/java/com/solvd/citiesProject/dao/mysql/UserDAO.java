@@ -28,9 +28,9 @@ public class UserDAO extends MySQLAbstractDAO implements IUserDAO {
 			logger.info(e1);
 		} 
 		try (PreparedStatement pr = conn.prepareStatement(GET_USER);
-				ResultSet rs = pr.executeQuery();
 				) {
 			pr.setLong(1, id);
+			ResultSet rs = pr.executeQuery();
 			if (rs.next()) {
 				user = populateUser(rs);
 			}
