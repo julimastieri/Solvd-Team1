@@ -68,9 +68,9 @@ public class PathDAO extends MySQLAbstractDAO implements IPathDAO {
 				paths.add(populatePath(rs));
 			}
 		} catch (Exception e) {
-			System.out.println(GET_ALL_PATHS);
 			logger.error(e);
 		}
+		System.out.println(paths.size());
 
 		return paths;
 	}
@@ -96,6 +96,7 @@ public class PathDAO extends MySQLAbstractDAO implements IPathDAO {
 		Transport trans = new Transport(rs.getLong("t_id"), rs.getString("t_description"));
 		trans.setDriver(new User(rs.getLong("u_id"), rs.getString("u_name"), rs.getString("u_last_name"), rs.getInt("u_identity_number"), rs.getDate("u_birthdate")));
 		path.setTransport(trans);
+
 		
 		return path;
 	}

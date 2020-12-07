@@ -37,12 +37,23 @@ public class App {
 	private static List<Path> pathListXML;
 
 	public static void main(String[] args) {
-		/*PointService pointServ = new PointService();
+		
+		//Call to service
+		PointService pointServ = new PointService();
 		List<Point> pointList = pointServ.getAll();
 
+		/*
+		LOGGER.info(pointList.size());
+		LOGGER.info(pointList.get(0));
 		LOGGER.info(pointList.get(0).getConnections());
-		LOGGER.info(pointList.get(1).getConnections());*/
-
+		LOGGER.info(pointList.get(1));
+		LOGGER.info(pointList.get(1).getConnections());
+		LOGGER.info(pointList.get(2));
+		LOGGER.info(pointList.get(2).getConnections());
+		LOGGER.info(pointList.get(3));
+		LOGGER.info(pointList.get(3).getConnections());		
+		
+		/*
 		// FINDING A PATH
 		// Creating points
 		Point a = new Point(1, null, 1, 20, 20);
@@ -79,6 +90,7 @@ public class App {
 		origin = a;
 		destiny = c;
 		
+
 		
 		
 		
@@ -97,35 +109,30 @@ public class App {
 		// FIND NEAREST DESTINATION
 		if (!existInMap(destiny, points)) {
 			destiny = nearestDestination(destiny, points);
-			//LOGGER.info("The nearest destiny is: "+destiny.getId());
+			LOGGER.info("The near destiny is: "+destiny.getId());
 			message = "From "+ destiny.getStreet() + " "+ destiny.getAddressNumber()+ " to your original destiny you have to go by taxi.";
 		}
 
 		// CALCULATING PATH
+
 		List<Path> path = Dijkstra.calculateShortestPathFromSource(points, origin, destiny);
-		
+
 		if (path.isEmpty()) {
-		
 			LOGGER.info("Path list empty.");
-			destiny = nearestDestination(destiny, points);
-			message = "From "+ destiny.getStreet() + " "+ destiny.getAddressNumber()+ " to your original destiny you have to go by taxi.";
-			path = Dijkstra.calculateShortestPathFromSource(points, origin, destiny);
-			LOGGER.info(message);
-		
 		} else {
 
 			path.stream().forEach(p -> LOGGER.info("ORGIN:" + p.getFrom().getId() + " ,  DESTINY: "+ p.getTo().getId()));
 			// MyJsonParser.writeJsonFile(path, "result.json");
 			LOGGER.info(message);
 		}
-
+*/
 	}
 
 	private static Point nearestDestination(Point c, List<Point> points) {
 		double distance = Double.MAX_VALUE;
 		Point nearestPoint = new Point();
 		for (Point p : points) {
-			if ((c.getStraightDistance(p) < distance) && (!c.equals(p) )){
+			if (c.getStraightDistance(p) < distance) {
 				distance = c.getStraightDistance(p);
 				nearestPoint = p;
 			}
@@ -140,5 +147,6 @@ public class App {
 		}
 		return false;
 	}
+	
 
 }
