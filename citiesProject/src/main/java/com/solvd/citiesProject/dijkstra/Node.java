@@ -1,11 +1,8 @@
 package com.solvd.citiesProject.dijkstra;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
-
 import com.solvd.citiesProject.models.Path;
 import com.solvd.citiesProject.models.Point;
 
@@ -13,7 +10,7 @@ public class Node {
 
 	private Point point;
 
-	private List<Path> shortestPath = new LinkedList<>();
+	private List<Node> shortestPath = new LinkedList<>();
 
 	private Float distance = Float.MAX_VALUE;
 	
@@ -35,11 +32,11 @@ public class Node {
 		this.point = point;
 	}
 
-	public List<Path> getShortestPath() {
+	public List<Node> getShortestPath() {
 		return shortestPath;
 	}
 
-	public void setShortestPath(List<Path> shortestPath) {
+	public void setShortestPath(List<Node> shortestPath) {
 		this.shortestPath = shortestPath;
 	}
 

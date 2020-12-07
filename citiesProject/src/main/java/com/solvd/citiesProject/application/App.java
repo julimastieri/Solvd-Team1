@@ -37,7 +37,7 @@ public class App {
 	private static List<Path> pathListXML;
 
 	public static void main(String[] args) {
-		/*
+		
 		//Call to service
 		PointService pointServ = new PointService();
 		List<Point> pointList = pointServ.getAll();
@@ -53,9 +53,10 @@ public class App {
 		LOGGER.info(pointList.get(3));
 		LOGGER.info(pointList.get(3).getConnections());		
 		
-		*/
+		
 		// FINDING A PATH
 		// Creating points
+		/*
 		Point a = new Point(1, null, 1, 20, 20);
 		Point b = new Point(2, null, 1, 15, 25);
 		Point c = new Point(3, null, 1, 30, 26);
@@ -72,59 +73,60 @@ public class App {
 		Path p6 = new Path(5, e, c, 6, true, new Transport());
 		Path p7 = new Path(1, d, e, 7, true, new Transport());
 
-		List<Point> points = new ArrayList<Point>();
-		points.add(a);
-		points.add(b);
-		points.add(c);
-		points.add(d);
-		points.add(e);
+		List<Point> pointList = new ArrayList<Point>();
+		pointList.add(a);
+		pointList.add(b);
+		pointList.add(c);
+		pointList.add(d);
+		pointList.add(e);
 
-		
+		*/
 		
 		Point destiny = new Point();
 		Point origin = new Point();
 		
-		Point fakeDestiny = new Point(6,null, 1, 6, 7);
 		
 		
-		origin = a;
-		destiny = c;
 		
-
+		origin = pointList.get(1);
+		destiny = pointList.get(29);
 		
+		
+		Point destinyOutOfPoints = new Point(6,null, 1, 6, 7);
 		
 		
 		//to try one point that is in the map but is unaccesible
 		//points.add(fakeDestiny); //it is disconnected
 		
-		String message= " ";
+		String message= "... and you are in your destiny! ";
 		
 		
 		// ASK USER FOR 2 POINTS
-		while (!existInMap(origin, points)) {
+		while (!existInMap(origin, pointList)) {
 			LOGGER.info("It isn't a valid origin.");
 			// read from stream
 		}
 
 		// FIND NEAREST DESTINATION
-		if (!existInMap(destiny, points)) {
-			destiny = nearestDestination(destiny, points);
+		if (!existInMap(destiny, pointList)) {
+			destiny = nearestDestination(destiny, pointList);
 			LOGGER.info("The near destiny is: "+destiny.getId());
 			message = "From "+ destiny.getStreet() + " "+ destiny.getAddressNumber()+ " to your original destiny you have to go by taxi.";
 		}
 
 		// CALCULATING PATH
 
-		List<Path> path = Dijkstra.calculateShortestPathFromSource(points, origin, destiny);
+		List<Point> path = Dijkstra.calculateShortestPathFromSource(pointList, origin, destiny);
 
 		if (path.isEmpty()) {
 			LOGGER.info("Path list empty.");
 		} else {
 
-			path.stream().forEach(p -> LOGGER.info("ORGIN:" + p.getFrom().getId() + " ,  DESTINY: "+ p.getTo().getId()));
+			path.stream().forEach(p -> LOGGER.info("Point:" + p.getId() ));
 			// MyJsonParser.writeJsonFile(path, "result.json");
 			LOGGER.info(message);
 		}
+		LOGGER.info("origin: "+ origin.getId()+" destiny: " +destiny.getId() );
 
 	}
 
