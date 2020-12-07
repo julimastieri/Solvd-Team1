@@ -88,7 +88,7 @@ public class App {
 		
 		
 		origin = a;
-		destiny = fakeDestiny;
+		destiny = c;
 		
 
 		
