@@ -37,6 +37,8 @@ public class App {
 	private static List<Path> pathListXML;
 
 	public static void main(String[] args) {
+		
+		//Call to service
 		PointService pointServ = new PointService();
 		List<Point> pointList = pointServ.getAll();
 
@@ -88,12 +90,6 @@ public class App {
 		origin = a;
 		destiny = fakeDestiny;
 		
-		
-		
-		
-		//to try one point that is in the map but is unaccesible
-		points.add(fakeDestiny); //it is disconnected
-		
 		String message= " ";
 		
 		
@@ -106,21 +102,14 @@ public class App {
 		// FIND NEAREST DESTINATION
 		if (!existInMap(destiny, points)) {
 			destiny = nearestDestination(destiny, points);
-			//LOGGER.info("The nearest destiny is: "+destiny.getId());
+			LOGGER.info("The near destiny is: "+destiny.getId());
 			message = "From "+ destiny.getStreet() + " "+ destiny.getAddressNumber()+ " to your original destiny you have to go by taxi.";
 		}
 
 		// CALCULATING PATH
 		List<Point> path = Dijkstra.calculateShortestPathFromSource(points, origin, destiny);
-		
 		if (path.isEmpty()) {
-		
 			LOGGER.info("Path list empty.");
-			destiny = nearestDestination(destiny, points);
-			message = "From "+ destiny.getStreet() + " "+ destiny.getAddressNumber()+ " to your original destiny you have to go by taxi.";
-			path = Dijkstra.calculateShortestPathFromSource(points, origin, destiny);
-			LOGGER.info(message);
-		
 		} else {
 
 			path.stream().forEach(p -> LOGGER.info(p.getId()));
@@ -134,7 +123,7 @@ public class App {
 		double distance = Double.MAX_VALUE;
 		Point nearestPoint = new Point();
 		for (Point p : points) {
-			if ((c.getStraightDistance(p) < distance) && (!c.equals(p) )){
+			if (c.getStraightDistance(p) < distance) {
 				distance = c.getStraightDistance(p);
 				nearestPoint = p;
 			}

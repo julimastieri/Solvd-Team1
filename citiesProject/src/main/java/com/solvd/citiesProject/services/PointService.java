@@ -22,8 +22,6 @@ public class PointService {
 		//set points connected with the searched point
 		for(Point p: points) {
 			for(Path pa: paths) {
-				System.out.println("wat");
-				System.out.println(pa.getFrom().equals(p) || (pa.getTo().equals(p) && pa.isBidirectional()));
 				if(pa.getFrom().equals(p) || (pa.getTo().equals(p) && pa.isBidirectional())) {
 					p.addConnection(pa);
 				}
