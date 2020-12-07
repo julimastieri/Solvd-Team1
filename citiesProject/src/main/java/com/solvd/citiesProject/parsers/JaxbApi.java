@@ -36,6 +36,10 @@ public class JaxbApi {
 			paths.add(p);
 			paths.add(p2);
 			Trip trip = new Trip();
+			paths.forEach(paaa -> {
+				paaa.getFrom().removeConnections();
+				paaa.getTo().removeConnections();
+			});
 			trip.setPaths(paths);
 
 			Marshaller mar = c.createMarshaller();
@@ -51,10 +55,11 @@ public class JaxbApi {
 	
 	public static void writeXMLFile(List<Path> paths) {
 		//static method for App to call
+		JAXBContext c;
 		try {
 			
-			System.out.println(JAXBContext.newInstance("com.solvd.citiesProject.models.Trip"));
-			JAXBContext c = JAXBContext.newInstance(Trip.class);
+
+			c = JAXBContext.newInstance(Trip.class);
 			
 			Marshaller mar = c.createMarshaller();
 			mar.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
