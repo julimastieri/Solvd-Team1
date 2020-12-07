@@ -77,13 +77,13 @@ public class App {
 		
 		
 		origin = a;
-		destiny = fakeDestiny;
+		destiny = c;
 		
 		
 		
 		
 		//to try one point that is in the map but is unaccesible
-		points.add(fakeDestiny); //it is disconnected
+		//points.add(fakeDestiny); //it is disconnected
 		
 		String message= " ";
 		
@@ -102,7 +102,7 @@ public class App {
 		}
 
 		// CALCULATING PATH
-		List<Point> path = Dijkstra.calculateShortestPathFromSource(points, origin, destiny);
+		List<Path> path = Dijkstra.calculateShortestPathFromSource(points, origin, destiny);
 		
 		if (path.isEmpty()) {
 		
@@ -114,7 +114,7 @@ public class App {
 		
 		} else {
 
-			path.stream().forEach(p -> LOGGER.info(p.getId()));
+			path.stream().forEach(p -> LOGGER.info("ORGIN:" + p.getFrom().getId() + " ,  DESTINY: "+ p.getTo().getId()));
 			// MyJsonParser.writeJsonFile(path, "result.json");
 			LOGGER.info(message);
 		}
