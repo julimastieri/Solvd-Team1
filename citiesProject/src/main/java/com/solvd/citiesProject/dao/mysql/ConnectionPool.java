@@ -1,5 +1,8 @@
 package com.solvd.citiesProject.dao.mysql;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -9,114 +12,69 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 
 public class ConnectionPool {
-	private BlockingQueue<Connection> pool;
-	private AtomicInteger connectionsCreated;
-	private static ConnectionPool singleton;
 	private static Logger logger = LogManager.getLogger(ConnectionPool.class);
-	private static String user;
-	private static String pass;
-	private static String url;
-	
-	private ConnectionPool() {
-		pool = new ArrayBlockingQueue<Connection>(5);
-		connectionsCreated = new AtomicInteger(0);
-		configConnectionPool();
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-		} catch (Exception e) {
-			logger.error(e);
-		}
-	}
-	
-	public static ConnectionPool getInstance() {
-		if(singleton == null) {
-			singleton = new ConnectionPool();
-		}
-		return singleton;
-	}
-	
-	private static void configConnectionPool(){
-		Properties prop = MySQLAbstractDAO.getConfig();
-		url    = prop.getProperty("jdbc.url");
-		user   = prop.getProperty("jdbc.username");
-		pass   = prop.getProperty("jdbc.password");
+	private final int MAX_SIZE;
+	private AtomicInteger createdConnections;
+	private BlockingQueue<Connection> connections;
+	private String url;
+	private String username;
+	private String password;
+	private static ConnectionPool cp;
 
-		logger.info("Now configured!");
-	}
-	
-	 public Connection getConnection() {
-		Connection conn = null;
-		 
-		if(pool.size() > 0 ) {
-			 try {
-				return pool.take();
-			} catch (InterruptedException e) {
-				logger.error(e);
-			}
-		 }
-		 
-		 if (connectionsCreated.get() < 5) {
-			Connection newConn = realizeConnection().get();
-			connectionsCreated.getAndIncrement();
-			return newConn;
-		 }
-		
-	 	 while(pool.size() == 0) {
-	 		 try {
-	 			logger.info("I should wait");
-	 			wait();
-				conn = pool.take();
-			} catch (InterruptedException e) {
-				logger.error(e);
-			}
-	 	 }
-	 	
-	 	 return conn;
-}
-		
-	public synchronized void releaseConnection(Connection conn) {
-		if(!pool.contains(conn)){
-			pool.add(conn);
-			notifyAll();
-			//logger.info("Connection released: " + conn + " now it's available in the pool");
-		}
-	}
-	
-	public Optional<Connection> realizeConnection() {
-		Optional<Connection> connection = null;
+	private ConnectionPool(int size) {
+		MAX_SIZE = size;
+		this.connections = new ArrayBlockingQueue<Connection>(size);
+		this.createdConnections = new AtomicInteger();
+
+		Properties props = new Properties();
+		File file = FileUtils.getFile(System.getProperty("user.dir") + "/src/main/resources/db.properties");
 		try {
-			connection = Optional.ofNullable(DriverManager.getConnection(
-						url + "?serverTimezone=UTC",
-						user,
-						pass));
-		} catch (SQLException e) {
+			props.load(new FileReader(file));
+			String driver = props.getProperty("jdbc.driver");
+			if (driver != null) {
+				Class.forName(driver);
+			}
+		} catch (IOException | ClassNotFoundException e) {
 			logger.error(e);
 		}
-		
-		return connection;
+
+		this.url = props.getProperty("jdbc.url");
+		this.username = props.getProperty("jdbc.username");
+		this.password = props.getProperty("jdbc.password");
 	}
-	
-	public synchronized void closeAll() {
-		try {
-			logger.info("Waiting maximum 10 seconds until all connections are back in the pool..");
-			wait(10000);
-		} catch (InterruptedException e) {
-			logger.error(e);
+
+	public synchronized static ConnectionPool getInstance(int size) {
+		if (cp == null) {
+			return new ConnectionPool(size);
 		}
-		
-		pool.stream().forEach(c -> {
-			try {
-				c.close();
-			} catch (SQLException e) {
-				logger.error(e);
+		return cp;
+	}
+
+	public Connection getConnection() throws InterruptedException, SQLException {
+		synchronized (this) {
+			if ((connections.size() == 0) && (createdConnections.get() < MAX_SIZE)) {
+				Connection con = DriverManager.getConnection(url, username, password);
+				connections.put(con);
+				createdConnections.incrementAndGet();
 			}
-		});
-		pool.clear();
-		logger.info("All connections were closed");
+			return connections.take();
+		}
+	}
+
+	public void releaseConnection(Connection connection) throws InterruptedException {
+		connections.put(connection);
+	}
+
+	public void closeAllConnections() {
+		connections.clear();
+		createdConnections = new AtomicInteger();
 	}
 }
+
+

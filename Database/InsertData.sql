@@ -5,8 +5,8 @@ INSERT INTO Users (`name`,`last_name`,`identity_number`,`birthdate`)
 VALUES ('Julian','Mastieri',41318117,'2008-7-04');
 
 #Countries
-INSERT INTO Countries (`name`) 
-VALUES ('Argentina');
+INSERT INTO Countries (`name`, `code`) 
+VALUES ('Argentina', 54);
 
 #Cities
 
@@ -15,11 +15,11 @@ VALUES ('Tandil','7000','1');
 
 #Points
 
-INSERT INTO Points (`street`,`number`,`point_number`,`city_id`)
-VALUES ('Roca','1234',7000,'1');
+INSERT INTO Points (`street`,`number`,`city_id`)
+VALUES ('Roca','1234','1');
 
-INSERT INTO Points (`street`,`number`,`point_number`,`city_id`)
-VALUES ('9 de Julio','345',7000,'1');
+INSERT INTO Points (`street`,`number`,`city_id`)
+VALUES ('9 de Julio','345','1');
 
 #Transports
 

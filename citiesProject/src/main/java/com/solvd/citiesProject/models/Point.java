@@ -12,11 +12,10 @@ public class Point extends AbstractEntity {
 	private City city;
 	private List<Path> connections;
 	
-	public Point(long id, String street, int addressNumber, City city) {
+	public Point(long id, String street, int addressNumber) {
 		super(id);
 		this.street = street;
 		this.addressNumber = addressNumber;
-		this.city = city;
 		this.connections = new ArrayList<Path>();
 	}
 	public Point() {

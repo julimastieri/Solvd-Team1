@@ -83,8 +83,21 @@ public class App {
 		*/
 		
 		IPointDAO pointDao = new PointDAO();
-		pathListXML = pointDao.getAll();
-		JaxbApi.writeXMLFile(pathListXML);
+		List<Point> pointList = pointDao.getAll();
+		
+		LOGGER.info(pointList.get(0).getId());
+		LOGGER.info(pointList.get(0).getStreet());
+		LOGGER.info(pointList.get(0).getAddressNumber());
+		
+		LOGGER.info(pointList.get(0).getCity().getId());
+		LOGGER.info(pointList.get(0).getCity().getName());
+		LOGGER.info(pointList.get(0).getCity().getPostalCode());
+		
+		LOGGER.info(pointList.get(0).getCity().getCountry().getId());
+		LOGGER.info(pointList.get(0).getCity().getCountry().getName());
+		LOGGER.info(pointList.get(0).getCity().getCountry().getCode());
+
+		//JaxbApi.writeXMLFile(pathListXML);
 		
 		/*
 		IUserDAO myBatisDao = new UserDAO();

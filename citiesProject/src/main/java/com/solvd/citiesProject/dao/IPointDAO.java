@@ -11,7 +11,7 @@ public interface IPointDAO extends IGenericDAO<Point>{
 	
 	@Select("Select p.*, "
 			+ "c.id as city_id, c.name as city_name, c.postal_code as city_postal_code, "
-			+ "coun.id as coun_id, coun.name as coun_name "
+			+ "coun.id as coun_id, coun.name as coun_name, coun.code as coun_code "
 			+ "from Points p LEFT JOIN Cities c ON p.city_id = c.id "
 			+ "LEFT JOIN Countries coun ON coun.id = c.country_id")
 	@ResultMap("PointResultMap")
