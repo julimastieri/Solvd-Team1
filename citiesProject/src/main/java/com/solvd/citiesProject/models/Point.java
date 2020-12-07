@@ -21,6 +21,12 @@ public class Point extends AbstractEntity {
 	public Point() {
 		this.connections = new ArrayList<Path>();
 	}
+	
+	@Override
+	public String toString() {
+		return "pointId: " + getId() + " street: " + street + " addressNumber: " + addressNumber 
+				+ "\n City: " + city;
+	}
 
 	public String getStreet() {
 		return street;

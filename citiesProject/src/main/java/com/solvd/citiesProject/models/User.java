@@ -25,7 +25,7 @@ public class User extends AbstractEntity {
 	}
 	@Override
 	public String toString() {
-		return "User: " + name + " " + lastName + " with identity number: " + identityNumber;
+		return "User: " + name + " " + lastName + " with identity number: " + identityNumber + " birthdate: " + birthdate;
 	}
 	public String getName() {
 		return name;

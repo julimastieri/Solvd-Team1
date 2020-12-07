@@ -16,7 +16,11 @@ public class City extends AbstractEntity {
 		this.postalCode = postalCode;
 	}
 	public City() {
-		
+	}
+	@Override
+	public String toString() {
+		return "cityId: " + getId() + " name: " + name + " postalCode " + postalCode 
+				+ " \n country: " + country;
 	}
 	public String getName() {
 		return name;

@@ -15,6 +15,10 @@ public class Country extends AbstractEntity{
 	public Country() {
 		
 	}
+	@Override
+	public String toString() {
+		return "countryId: " + getId() + " name: " + name + " code: " + code;
+	}
 	public String getName() {
 		return name;
 	}

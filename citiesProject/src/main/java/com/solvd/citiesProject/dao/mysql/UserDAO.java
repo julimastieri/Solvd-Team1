@@ -55,8 +55,7 @@ public class UserDAO extends MySQLAbstractDAO implements IUserDAO {
 	}
 
 	private User populateUser(ResultSet rs) throws SQLException {
-		User u = new User(rs.getLong("id"), rs.getString("name"), rs.getString("last_name"), rs.getInt("identity_number"), rs.getDate("birthdate"));
-		return u;
+		return new User(rs.getLong("id"), rs.getString("name"), rs.getString("last_name"), rs.getInt("identity_number"), rs.getDate("birthdate"));
 	}
 	
 }

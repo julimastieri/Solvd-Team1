@@ -17,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 import com.solvd.citiesProject.dao.IPathDAO;
 import com.solvd.citiesProject.dao.IPointDAO;
 import com.solvd.citiesProject.dao.IUserDAO;
-import com.solvd.citiesProject.dao.mybatis.PathDAO;
+import com.solvd.citiesProject.dao.mysql.PathDAO;
 import com.solvd.citiesProject.dao.mysql.PointDAO;
 import com.solvd.citiesProject.dao.mysql.UserDAO;
 import com.solvd.citiesProject.dijkstra.Dijkstra;
@@ -38,10 +38,10 @@ public class App {
 	
 	public static void main(String[] args) {
 		
-		IUserDAO userDao = new UserDAO();
-		Optional<User> user = userDao.getById(1L);
+		IPathDAO pathDao = new PathDAO();
+		List<Path> pathList = pathDao.getAll();
 		
-		LOGGER.info(user.get());
+		LOGGER.info(pathList.get(0));
 		
 		/*The country of this example is wrong!!!
 
