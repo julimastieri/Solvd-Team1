@@ -43,7 +43,8 @@ public class App {
 		PointService pointServ = new PointService();
 		List<Point> pointList = pointServ.getAll();	
 		
-		LOGGER.info(pointList.size());
+		LOGGER.info(pointList.get(0).getConnections());
+		//LOGGER.info(pointList.get(1).getConnections());
 		
 		/*
 		//FINDING A PATH
