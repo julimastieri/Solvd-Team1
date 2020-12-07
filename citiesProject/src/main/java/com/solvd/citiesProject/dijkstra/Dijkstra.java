@@ -16,7 +16,7 @@ import com.solvd.citiesProject.models.Point;
 
 public class Dijkstra {
 	private static final Logger LOGGER = LogManager.getLogger(Dijkstra.class);
-	public static List<Point> calculateShortestPathFromSource(List<Point> list, Point from, Point to) {
+	public static List<Path> calculateShortestPathFromSource(List<Point> list, Point from, Point to) {
 
 
 		List<Node> nodes = convertPointsToNodes(list);
@@ -50,7 +50,7 @@ public class Dijkstra {
 				}
 				Float edgeWeight = connection.getDistance();
 				if (!settledNodes.contains(adjacentNode)) {
-					calculateMinimumDistance(adjacentNode, edgeWeight, currentNode);
+					calculateMinimumDistance(adjacentNode, edgeWeight, currentNode, connection);
 					unsettledNodes.add(adjacentNode);
 				}
 				settledNodes.add(currentNode);
@@ -65,7 +65,7 @@ public class Dijkstra {
 			
 
 	
-		return convertNodeToPoint(result.getShortestPath());
+		return result.getShortestPath();
 	
 	}
 
@@ -87,13 +87,6 @@ public class Dijkstra {
 		return retList;
 	}
 
-	private static List<Point> convertNodeToPoint(List<Node> list){
-		List<Point> retList = new ArrayList<Point>();
-		for (Node p : list) {
-			retList.add(p.getPoint());
-		}
-		return retList;
-	}
 	
 	private static Node getLowestDistanceNode(Set <Node> unsettledNodes) {
 		Node lowestDistanceNode = null;
@@ -108,14 +101,14 @@ public class Dijkstra {
 		return lowestDistanceNode;
 	}
 
-	private static void calculateMinimumDistance(Node evaluationNode, Float edgeWeigh, Node sourceNode) {
+	private static void calculateMinimumDistance(Node evaluationNode, Float edgeWeigh, Node sourceNode, Path connection) {
 		float sourceDistance = sourceNode.getDistance();
 
 		if (sourceDistance + edgeWeigh < evaluationNode.getDistance()) {
 			
 			evaluationNode.setDistance(sourceDistance + edgeWeigh);
-			LinkedList<Node> shortestPath = new LinkedList<>(sourceNode.getShortestPath());
-			shortestPath.add(sourceNode);
+			LinkedList<Path> shortestPath = new LinkedList<>(sourceNode.getShortestPath());
+			shortestPath.add(connection);
 			evaluationNode.setShortestPath(shortestPath);
 			shortestPath.stream().forEach(p-> LOGGER.info(p));
 			

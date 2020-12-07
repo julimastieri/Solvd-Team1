@@ -117,14 +117,14 @@ public class App {
 
 		// CALCULATING PATH
 
-		List<Point> path = Dijkstra.calculateShortestPathFromSource(pointList, origin, destiny);
+		List<Path> path = Dijkstra.calculateShortestPathFromSource(pointList, origin, destiny);
 
 		if (path.isEmpty()) {
 			LOGGER.info("Path list empty.");
 		} else {
 
 
-			path.stream().forEach(p -> LOGGER.info("Point:" + p.getId() ));
+			path.stream().forEach(p -> LOGGER.info("ORIGIN: " + p.getFrom().getId() + "   DESTINY: " + p.getTo().getId() ));
 
 			// MyJsonParser.writeJsonFile(path, "result.json");
 			LOGGER.info(message);

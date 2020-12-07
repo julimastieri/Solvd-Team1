@@ -10,7 +10,7 @@ public class Node {
 
 	private Point point;
 
-	private List<Node> shortestPath = new LinkedList<>();
+	private List<Path> shortestPath = new LinkedList<>();
 
 	private Float distance = Float.MAX_VALUE;
 	
@@ -32,11 +32,11 @@ public class Node {
 		this.point = point;
 	}
 
-	public List<Node> getShortestPath() {
+	public List<Path> getShortestPath() {
 		return shortestPath;
 	}
 
-	public void setShortestPath(List<Node> shortestPath) {
+	public void setShortestPath(List<Path> shortestPath) {
 		this.shortestPath = shortestPath;
 	}
 
