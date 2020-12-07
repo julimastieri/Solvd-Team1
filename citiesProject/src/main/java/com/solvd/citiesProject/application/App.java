@@ -37,12 +37,21 @@ public class App {
 	private static List<Path> pathListXML;
 
 	public static void main(String[] args) {
-		/*PointService pointServ = new PointService();
+		PointService pointServ = new PointService();
 		List<Point> pointList = pointServ.getAll();
 
+		/*
+		LOGGER.info(pointList.size());
+		LOGGER.info(pointList.get(0));
 		LOGGER.info(pointList.get(0).getConnections());
-		LOGGER.info(pointList.get(1).getConnections());*/
-
+		LOGGER.info(pointList.get(1));
+		LOGGER.info(pointList.get(1).getConnections());
+		LOGGER.info(pointList.get(2));
+		LOGGER.info(pointList.get(2).getConnections());
+		LOGGER.info(pointList.get(3));
+		LOGGER.info(pointList.get(3).getConnections());		
+		
+		/*
 		// FINDING A PATH
 		// Creating points
 		Point a = new Point(1, null, 1, 20, 20);
@@ -105,7 +114,7 @@ public class App {
 			// MyJsonParser.writeJsonFile(path, "result.json");
 			LOGGER.info(message);
 		}
-
+*/
 	}
 
 	private static Point nearestDestination(Point c, List<Point> points) {
@@ -127,5 +136,6 @@ public class App {
 		}
 		return false;
 	}
+	
 
 }

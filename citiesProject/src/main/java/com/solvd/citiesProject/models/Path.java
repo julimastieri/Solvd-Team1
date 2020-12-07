@@ -16,9 +16,7 @@ public class Path extends AbstractEntity{
 	@XmlElement(name="distance")
 	private float distance;
 	
-	public void setDistance(float distance) {
-		this.distance = distance;
-	}
+	
 
 	public Path(float d,Point from, Point to, long id, boolean bidirectional,  Transport trans) {
 		super(id);
@@ -35,12 +33,7 @@ public class Path extends AbstractEntity{
 	public Path(float distance, long id, boolean bidirectional) {
 		super(id);
 		this.bidirectional = bidirectional;
-
-		this.from.addConnection(this);
-		if (bidirectional) {
-			to.addConnection(this);
-		}
-
+		this.distance = distance;
 	}
 	
 	public Path () {
@@ -48,7 +41,7 @@ public class Path extends AbstractEntity{
 	
 	@Override
 	public String toString() {
-		return "pathId: " + getId() + " distance: " + getDistance() + " isBidirectional: " + bidirectional 
+		return "pathId: " + getId() + " distance: " + distance + " isBidirectional: " + bidirectional 
 				+ "\n From: " + from 
 				+ "\n To: " + to 
 				+ "\n Transport: " + transport;
@@ -86,6 +79,11 @@ public class Path extends AbstractEntity{
 	public void setTransport(Transport transport) {
 		this.transport = transport;
 	}
+	
+	public void setDistance(float distance) {
+		this.distance = distance;
+	}
+	
 	
 
 }

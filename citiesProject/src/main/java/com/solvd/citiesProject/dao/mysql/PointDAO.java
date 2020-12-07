@@ -44,7 +44,6 @@ public class PointDAO extends MySQLAbstractDAO implements IPointDAO {
 	@Override
 	public List<Point> getAll() {
 		List<Point> points = new ArrayList<Point>();
-
 		try (Connection conn = pool.getConnection();
 				PreparedStatement pr = conn.prepareStatement(GET_ALL_POINTS);
 				ResultSet rs = pr.executeQuery();) {
