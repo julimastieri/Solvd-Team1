@@ -1,7 +1,11 @@
 package com.solvd.citiesProject.models;
 
+import javax.xml.bind.annotation.XmlElement;
+
 public class Transport extends AbstractEntity{
+	@XmlElement(name="description")
 	private String description;
+	@XmlElement(name="driver")
 	private User driver;
 	public Transport(long id, String description, User driver) {
 		super(id);

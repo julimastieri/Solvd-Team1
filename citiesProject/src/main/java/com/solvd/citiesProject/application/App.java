@@ -6,6 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,12 +24,20 @@ import com.solvd.citiesProject.dijkstra.Dijkstra;
 import com.solvd.citiesProject.models.Path;
 import com.solvd.citiesProject.models.Point;
 import com.solvd.citiesProject.models.User;
+import com.solvd.citiesProject.parsers.JaxbApi;
 import com.solvd.citiesProject.parsers.MyJsonParser;
 
+
+@XmlRootElement(name="trip")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class App {
+	
 	private static final Logger LOGGER = LogManager.getLogger(App.class);
+	@XmlElement(name="path")
+	private static List<Path> pathListXML;
 	
 	public static void main(String[] args) {
+		
 		
 		/*The country of this example is wrong!!!
 		IPointDAO pointDao = new PointDAO();
@@ -64,6 +77,9 @@ public class App {
 		LOGGER.info(pathList.get(0).getTo().getAddressNumber());
 		
 		LOGGER.info(pathList.size());
+		
+		pathListXML = pathDao.getAll();
+		JaxbApi.writeXMLFile(pathListXML);
 		
 		/*
 		IUserDAO myBatisDao = new UserDAO();

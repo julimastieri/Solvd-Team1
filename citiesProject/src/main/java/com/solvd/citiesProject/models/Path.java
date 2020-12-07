@@ -1,11 +1,17 @@
 package com.solvd.citiesProject.models;
 
-public class Path extends AbstractEntity{
+import javax.xml.bind.annotation.XmlElement;
 
+public class Path extends AbstractEntity{
+	@XmlElement(name="distance")
 	private float distance;
+	@XmlElement(name="pointFrom")
 	private Point from;
+	@XmlElement(name="pointTo")
 	private Point to;
+	@XmlElement(name="bidirectional")
 	private boolean bidirectional;
+	@XmlElement(name="transport")
 	private Transport transport;
 	
 	public Path(float distance, Point from, Point to, long id, boolean bidirectional, Transport transport) {
