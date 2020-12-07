@@ -7,6 +7,8 @@
 	<id column="id" property="id"/>
 	<result column="street" property="street"/>
 	<result column="number" property="addressNumber"/>
+	<result column="latitude" property="latitude"/>
+	<result column="longitude" property="longitude"/>
 	<association property="city" column="p.city_id" foreignColumn="c.id" columnPrefix="city_" resultMap="com.solvd.citiesProject.dao.ICityDAO.CityResultMap"/>
   </resultMap>
 </mapper>

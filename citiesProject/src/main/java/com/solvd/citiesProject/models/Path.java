@@ -3,8 +3,6 @@ package com.solvd.citiesProject.models;
 import javax.xml.bind.annotation.XmlElement;
 
 public class Path extends AbstractEntity{
-	@XmlElement(name="distance")
-	private float distance;
 	@XmlElement(name="pointFrom")
 	private Point from;
 	@XmlElement(name="pointTo")
@@ -14,9 +12,8 @@ public class Path extends AbstractEntity{
 	@XmlElement(name="transport")
 	private Transport transport;
 	
-	public Path(float distance, Point from, Point to, long id, boolean bidirectional,  Transport trans) {
+	public Path(Point from, Point to, long id, boolean bidirectional,  Transport trans) {
 		super(id);
-		this.distance = distance;
 		this.bidirectional = bidirectional;
 		this.from = from;
 		this.to = to;
@@ -28,7 +25,6 @@ public class Path extends AbstractEntity{
 	
 	public Path(float distance, long id, boolean bidirectional) {
 		super(id);
-		this.distance = distance;
 		this.bidirectional = bidirectional;
 
 		this.from.addConnection(this);
@@ -43,7 +39,7 @@ public class Path extends AbstractEntity{
 	
 	@Override
 	public String toString() {
-		return "pathId: " + getId() + " distance: " + distance + " isBidirectional: " + bidirectional 
+		return "pathId: " + getId() + " distance: " + getDistance() + " isBidirectional: " + bidirectional 
 				+ "\n From: " + from 
 				+ "\n To: " + to 
 				+ "\n Transport: " + transport;
@@ -56,10 +52,7 @@ public class Path extends AbstractEntity{
 		this.bidirectional = bidirectional;
 	}
 	public float getDistance() {
-		return distance;
-	}
-	public void setDistance(float distance) {
-		this.distance = distance;
+		return 0;
 	}
 	public Point getFrom() {
 		return from;

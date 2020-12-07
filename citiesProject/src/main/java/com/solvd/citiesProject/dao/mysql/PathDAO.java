@@ -22,8 +22,8 @@ import com.solvd.citiesProject.models.User;
 public class PathDAO extends MySQLAbstractDAO implements IPathDAO {
 	private Logger logger = LogManager.getLogger(PointDAO.class);
 	private static final String GET_ALL_PATHS = "Select path.*, "
-			+ "p_from.id as p_from_id, p_from.street as p_from_street, p_from.number as p_from_number, p_from.city_id as p_from_city_id, "
-			+ "p_to.id as p_to_id, p_to.street as p_to_street, p_to.number as p_to_number, p_to.city_id as p_to_city_id, "
+			+ "p_from.id as p_from_id, p_from.street as p_from_street, p_from.number as p_from_number, p_from.city_id as p_from_city_id, p_from.latitude as p_from_latitude, p_from.longitude as p_from_longitude, "
+			+ "p_to.id as p_to_id, p_to.street as p_to_street, p_to.number as p_to_number, p_to.city_id as p_to_city_id, p_to.latitude as p_to_latitude, p_to.longitude as p_to_longitude, "
 			+ "c_from.id as c_from_city_id, c_from.name as c_from_city_name, c_from.postal_code as c_from_city_postal_code, "
 			+ "c_to.id as c_to_city_id, c_to.name as c_to_city_name, c_to.postal_code as c_to_city_postal_code, "
 			+ "coun_from.id as coun_from_id, coun_from.name as coun_from_name,coun_from.code as coun_from_code, "
@@ -79,14 +79,14 @@ public class PathDAO extends MySQLAbstractDAO implements IPathDAO {
 		Path path = new Path(rs.getFloat("distance"), rs.getLong("id"), rs.getBoolean("bidirectional"));
 		
 		//From
-		Point from = new Point(rs.getLong("p_from_id"), rs.getString("p_from_street"), rs.getInt("p_from_number"));
+		Point from = new Point(rs.getLong("p_from_id"), rs.getString("p_from_street"), rs.getInt("p_from_number"), rs.getDouble("p_from_latitude"), rs.getDouble("p_from_longitude"));
 		City cityFrom = new City(rs.getLong("c_from_city_id"), rs.getString("c_from_city_name"), rs.getInt("c_from_city_postal_code"));
 		cityFrom.setCountry(new Country(rs.getLong("coun_from_id"), rs.getString("coun_from_name"), rs.getInt("coun_from_code")));
 		from.setCity(cityFrom);
 		path.setFrom(from);
 		
 		//To
-		Point to = new Point(rs.getLong("p_to_id"), rs.getString("p_to_street"), rs.getInt("p_to_number"));
+		Point to = new Point(rs.getLong("p_to_id"), rs.getString("p_to_street"), rs.getInt("p_to_number"), rs.getDouble("p_to_latitude"), rs.getDouble("p_to_longitude"));
 		City cityTo = new City(rs.getLong("c_to_city_id"), rs.getString("c_to_city_name"), rs.getInt("c_to_city_postal_code"));
 		cityTo.setCountry(new Country(rs.getLong("coun_to_id"), rs.getString("coun_to_name"), rs.getInt("coun_to_code")));
 		to.setCity(cityTo);

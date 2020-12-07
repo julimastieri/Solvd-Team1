@@ -12,14 +12,19 @@ public class Point extends AbstractEntity {
 	@XmlElement(name = "addressNumber")
 	private int addressNumber;
 	@XmlElement(name = "city")
+	private double latitude;
+	private double longitude;
+
 	private City city;
 	private List<Path> connections;
 
-	public Point(long id, String street, int addressNumber) {
+	public Point(long id, String street, int addressNumber, double latitude, double longitude) {
 		super(id);
 		this.street = street;
 		this.addressNumber = addressNumber;
 		this.connections = new ArrayList<Path>();
+		this.latitude = latitude;
+		this.longitude = longitude;
 	}
 
 	public Point() {
@@ -28,7 +33,8 @@ public class Point extends AbstractEntity {
 
 	@Override
 	public String toString() {
-		return "pointId: " + getId() + " street: " + street + " addressNumber: " + addressNumber + "\n City: " + city;
+		return "pointId: " + getId() + " street: " + street + " addressNumber: " + addressNumber + " latitude: " + latitude + " longitude: " + longitude 
+				+ "\n City: " + city;
 	}
 
 	public String getStreet() {
@@ -100,6 +106,22 @@ public class Point extends AbstractEntity {
 
 	public void addConnection(Path path) {
 		this.connections.add(path);
+	}
+	
+	public double getLatitude() {
+		return latitude;
+	}
+
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
+	public double getLongitude() {
+		return longitude;
+	}
+
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
 	}
 
 }

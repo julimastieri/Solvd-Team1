@@ -59,7 +59,7 @@ public class PointDAO extends MySQLAbstractDAO implements IPointDAO {
 	}
 
 	private Point populatePoint(ResultSet rs) throws SQLException {
-		Point p = new Point(rs.getLong("id"), rs.getString("street"), rs.getInt("number"));
+		Point p = new Point(rs.getLong("id"), rs.getString("street"), rs.getInt("number"), rs.getDouble("latitude"), rs.getDouble("longitude"));
 		City city = new City(rs.getLong("city_id"), rs.getString("city_name"), rs.getInt("city_postal_code"));
 		city.setCountry(new Country(rs.getLong("coun_id"), rs.getString("coun_name"), rs.getInt("coun_code")));
 		p.setCity(city);

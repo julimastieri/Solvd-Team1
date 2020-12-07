@@ -5,7 +5,6 @@
 <mapper namespace="com.solvd.citiesProject.dao.IPathDAO">
   <resultMap id="PathResultMap" type="Path">
 	<id column="id" property="id"/>
-	<result column="distance" property="distance"/>
 	<result column="bidirectional" property="bidirectional"/>
 	<association property="transport" column="path.transport_id" foreignColumn="t.id" resultMap="com.solvd.citiesProject.dao.ITransportDAO.TransportResultMap"/>
 	<association property="from" column="path.id_point_from" foreignColumn="p_from.id" columnPrefix="p_from_" resultMap="com.solvd.citiesProject.dao.IPointDAO.PointResultMap"/>

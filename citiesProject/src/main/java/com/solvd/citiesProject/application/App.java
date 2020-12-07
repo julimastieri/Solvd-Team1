@@ -40,33 +40,29 @@ public class App {
 	private static List<Path> pathListXML;
 	
 	public static void main(String[] args) {
-		/*IUserDAO myBatisDao = new UserDAO();
-		Optional<User> user = myBatisDao.getOneById(1L);
-		LOGGER.info(user);
-		user.ifPresent(u -> LOGGER.info(u));
+		PointService pointServ = new PointService();
+		List<Point> pointList = pointServ.getAll();	
+		
+		LOGGER.info(pointList.get(0).getConnections());
+		LOGGER.info(pointList.get(1).getConnections());
 
-		Optional<User> user2 = myBatisDao.getOneById(2L);
-		LOGGER.info(user2);
-		user2.ifPresent(u2 -> LOGGER.info(u2));
-		 */
-
-		//FINDING A PATH
+		/*/FINDING A PATH
 		//Creating points
-		Point A = new Point(1,null,1);
-		Point B = new Point(2,null,1);
-		Point C = new Point(3,null,1);
-		Point D = new Point(4,null,1);
-		Point E = new Point(5,null,1);
+		//Point A = new Point(1,null,1);
+		//Point B = new Point(2,null,1);
+		//Point C = new Point(3,null,1);
+		//Point D = new Point(4,null,1);
+		//Point E = new Point(5,null,1);
 
 		//Creating Paths
 		//distance, from, to, id
-		Path p1 = new Path(1, A, D, 1, true, new Transport());
-		Path p2 = new Path(6, A, B, 2, true, new Transport());
-		Path p3 = new Path(1, B, D, 3, true, new Transport());
-		Path p4 = new Path(5, B, C, 4, true, new Transport());
-		Path p5 = new Path(2, B, E, 5, true, new Transport());
-		Path p6 = new Path(5, E, C, 6, true, new Transport());
-		Path p7 = new Path(1, D, E, 7, true, new Transport());
+		//Path p1 = new Path(1, A, D, 1, true, new Transport());
+		//Path p2 = new Path(6, A, B, 2, true, new Transport());
+		//Path p3 = new Path(1, B, D, 3, true, new Transport());
+		//Path p4 = new Path(5, B, C, 4, true, new Transport());
+		//Path p5 = new Path(2, B, E, 5, true, new Transport());
+		//Path p6 = new Path(5, E, C, 6, true, new Transport());
+		//Path p7 = new Path(1, D, E, 7, true, new Transport());
 
 	
 
@@ -86,7 +82,7 @@ public class App {
 			path.stream().forEach(p-> LOGGER.info(p.getId()));
 			//MyJsonParser.writeJsonFile(path, "result.json");
 		}	
-
+		 */
 
 	}
 
