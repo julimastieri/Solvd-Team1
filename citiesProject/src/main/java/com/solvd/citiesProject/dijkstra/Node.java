@@ -61,6 +61,10 @@ public class Node {
 	public String toString() {
 		return "Node " + getPoint().getId();
 	}
+	public void addShortestPath(Node result) {
+		shortestPath.add(result);
+		
+	}
 
 
 }

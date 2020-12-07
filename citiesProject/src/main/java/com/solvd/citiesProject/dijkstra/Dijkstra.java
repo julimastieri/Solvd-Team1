@@ -63,12 +63,12 @@ public class Dijkstra {
 
 			
 			currentNode.cleanAdj();
-			
-
-	
 				
 		}
 			
+		if(!result.getShortestPath().isEmpty()) {
+			result.addShortestPath(result);
+		}
 	
 		return convertNodesToPoints(result.getShortestPath());
 	
