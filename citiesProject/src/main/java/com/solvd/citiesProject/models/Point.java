@@ -1,9 +1,14 @@
 package com.solvd.citiesProject.models;
 
 import java.util.*;
+
+import javax.xml.bind.annotation.XmlElement;
 public class Point extends AbstractEntity {
+	@XmlElement(name="street")
 	private String street;
+	@XmlElement(name="addressNumber")
 	private int addressNumber;
+	@XmlElement(name="city")
 	private City city;
 	private List<Path> connections;
 	

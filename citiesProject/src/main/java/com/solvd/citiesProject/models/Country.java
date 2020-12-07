@@ -1,7 +1,11 @@
 package com.solvd.citiesProject.models;
 
+import javax.xml.bind.annotation.XmlElement;
+
 public class Country extends AbstractEntity{
+	@XmlElement(name="name")
 	private String name;
+	@XmlElement(name="code")
 	private int code;
 	public Country(long id, String name, int code) {
 		super(id);

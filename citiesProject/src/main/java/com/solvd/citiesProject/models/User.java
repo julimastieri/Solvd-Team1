@@ -2,9 +2,14 @@ package com.solvd.citiesProject.models;
 
 import java.util.Date;
 
+import javax.xml.bind.annotation.XmlElement;
+
 public class User extends AbstractEntity {
+	@XmlElement(name="name")
 	private String name;
+	@XmlElement(name="lastName")
 	private String lastName;
+	@XmlElement(name="identityNumber")
 	private int identityNumber;
 	private Date birthdate;
 	
