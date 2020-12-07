@@ -16,31 +16,22 @@ import com.solvd.citiesProject.models.User;
 public class UserDAO extends MySQLAbstractDAO implements IUserDAO {
 
 	private Logger logger = LogManager.getLogger(UserDAO.class);
-	private static final String GET_ONE_USER = ("SELECT * FROM users WHERE id = ?");
+	private static final String GET_USER = "SELECT * FROM Users WHERE id = ?";
 	
 	@Override
 	public Optional<User> getById(long id) {
 		User user = null;
 		ResultSet rs = null;
-		Connection conn = pool.getConnection();
-		
-		try (PreparedStatement pr = conn.prepareStatement(GET_ONE_USER)) {
+		try (Connection conn = pool.getConnection(); 
+				PreparedStatement pr = conn.prepareStatement(GET_USER);
+				) {
 			pr.setLong(1, id);
 			rs = pr.executeQuery();
-			
-			if (rs != null && rs.next()) {
+			if (rs.next()) {
 				user = populateUser(rs);
 			}
 		} catch (Exception e) {
 			logger.error(e);
-		}
-		finally {
-			try {
-				rs.close();
-				pool.releaseConnection(conn);
-			} catch (Exception e) {
-				logger.error(e);
-			}
 		}
 		return Optional.ofNullable(user);
 	}
@@ -57,25 +48,14 @@ public class UserDAO extends MySQLAbstractDAO implements IUserDAO {
 		return false;
 	}
 
-
-
 	@Override
 	public List<User> getAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	private User populateUser(ResultSet rs) {
-		User u = new User();
-		try {
-			u.setId(rs.getLong("id"));
-			u.setName(rs.getString("name"));
-			u.setLastName(rs.getString("last_name"));
-			u.setIdentityNumber(rs.getInt("identity_number"));
-			// u.setBirthday();
-		} catch (SQLException e) {
-			logger.error(e);
-		}
+	private User populateUser(ResultSet rs) throws SQLException {
+		User u = new User(rs.getLong("id"), rs.getString("name"), rs.getString("last_name"), rs.getInt("identity_number"), rs.getDate("birthdate"));
 		return u;
 	}
 	

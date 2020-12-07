@@ -19,7 +19,7 @@ import com.solvd.citiesProject.dao.IPointDAO;
 import com.solvd.citiesProject.dao.IUserDAO;
 import com.solvd.citiesProject.dao.mybatis.PathDAO;
 import com.solvd.citiesProject.dao.mysql.PointDAO;
-import com.solvd.citiesProject.dao.mybatis.UserDAO;
+import com.solvd.citiesProject.dao.mysql.UserDAO;
 import com.solvd.citiesProject.dijkstra.Dijkstra;
 import com.solvd.citiesProject.models.Path;
 import com.solvd.citiesProject.models.Point;
@@ -38,6 +38,11 @@ public class App {
 	
 	public static void main(String[] args) {
 		
+		IUserDAO userDao = new UserDAO();
+		Optional<User> user = userDao.getById(1L);
+		
+		LOGGER.info(user.get());
+		
 		/*The country of this example is wrong!!!
 
 		
@@ -55,8 +60,7 @@ public class App {
 		LOGGER.info(pointList.get(0).getCity().getCountry().getId());
 		LOGGER.info(pointList.get(0).getCity().getCountry().getName());
 		
-		
-		
+
 		IPathDAO pathDao = new PathDAO();
 		/*
 		List<Path> pathList = pathDao.getAll();
@@ -80,22 +84,7 @@ public class App {
 		LOGGER.info(pathList.get(0).getTo().getAddressNumber());
 		
 		LOGGER.info(pathList.size());
-		*/
 		
-		IPointDAO pointDao = new PointDAO();
-		List<Point> pointList = pointDao.getAll();
-		
-		LOGGER.info(pointList.get(0).getId());
-		LOGGER.info(pointList.get(0).getStreet());
-		LOGGER.info(pointList.get(0).getAddressNumber());
-		
-		LOGGER.info(pointList.get(0).getCity().getId());
-		LOGGER.info(pointList.get(0).getCity().getName());
-		LOGGER.info(pointList.get(0).getCity().getPostalCode());
-		
-		LOGGER.info(pointList.get(0).getCity().getCountry().getId());
-		LOGGER.info(pointList.get(0).getCity().getCountry().getName());
-		LOGGER.info(pointList.get(0).getCity().getCountry().getCode());
 
 		//JaxbApi.writeXMLFile(pathListXML);
 		
