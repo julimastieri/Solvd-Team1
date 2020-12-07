@@ -21,26 +21,26 @@ import jdk.internal.org.jline.utils.Log;
 
 public class App {
 	private static final Logger LOGGER = LogManager.getLogger(App.class);
-	
+
 	public static void main(String[] args) {
 		/*IUserDAO myBatisDao = new UserDAO();
 		Optional<User> user = myBatisDao.getOneById(1L);
 		LOGGER.info(user);
 		user.ifPresent(u -> LOGGER.info(u));
-		
+
 		Optional<User> user2 = myBatisDao.getOneById(2L);
 		LOGGER.info(user2);
 		user2.ifPresent(u2 -> LOGGER.info(u2));
-		*/
-		
+		 */
+
 		//FINDING A PATH
 		//Creating points
-		Point A = new Point();
-		Point B = new Point();
-		Point C = new Point();
-		Point D = new Point();
-		Point E = new Point();
-		
+		Point A = new Point(1,null,1,null);
+		Point B = new Point(2,null,1,null);
+		Point C = new Point(3,null,1,null);
+		Point D = new Point(4,null,1,null);
+		Point E = new Point(5,null,1,null);
+
 		//Creating Paths
 		//distance, from, to, id
 		Path p1 = new Path(1, A, D, 1, true);
@@ -48,26 +48,26 @@ public class App {
 		Path p3 = new Path(1, B, D, 3, true);
 		Path p4 = new Path(5, B, C, 4, true);
 		Path p5 = new Path(2, B, E, 5, true);
-		Path p6 = new Path(5, C, E, 6, true);
-		Path p7 = new Path(1, E, D, 7, true);
-		
-		
+		Path p6 = new Path(5, E, C, 6, true);
+		Path p7 = new Path(1, D, E, 7, true);
+
+
 		List<Point> points = new ArrayList<Point>();
 		points.add(A);
 		points.add(B);
 		points.add(C);
 		points.add(D);
 		points.add(E);
-		
+
 		List<Point> path = Dijkstra.calculateShortestPathFromSource(points, A, C);
 		if (path.isEmpty()) {
 			LOGGER.info("Path list empty");
 		}
 		else {
-			path.stream().forEach(p-> LOGGER.info(p.toString()));
+			path.stream().forEach(p-> LOGGER.info(p.getId()));
 		}
-		
-		
+
+
 	}
 
 }

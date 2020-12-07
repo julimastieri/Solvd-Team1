@@ -1,5 +1,6 @@
 package com.solvd.citiesProject.dijkstra;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,9 +16,12 @@ public class Node {
 	private List<Node> shortestPath = new LinkedList<>();
 
 	private Float distance = Float.MAX_VALUE;
+	
+	private List<Path> adj;
 
 	public Node (Point p) {
 		this.point=p;
+		this.adj = new ArrayList<Path>(p.getConnections());
 	}
 	public Node() {
 
@@ -48,7 +52,14 @@ public class Node {
 	}
 
 	public List<Path> getAdjacentNodes() {
-		return point.getConnections();
+		return adj;
+	}
+	public void cleanAdj() {
+		adj.clear();
+	}
+	@Override
+	public String toString() {
+		return "Node " + getPoint().getId();
 	}
 
 

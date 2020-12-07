@@ -14,6 +14,9 @@ public class Path extends AbstractEntity{
 		this.to = to;
 		this.bidirectional = bidirectional;
 		this.from.addConnection(this);
+		if (bidirectional) {
+			to.addConnection(this);
+		}
 	}
 	
 	public Path () {
