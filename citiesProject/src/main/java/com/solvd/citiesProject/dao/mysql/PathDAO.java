@@ -70,7 +70,6 @@ public class PathDAO extends MySQLAbstractDAO implements IPathDAO {
 		} catch (Exception e) {
 			logger.error(e);
 		}
-		System.out.println(paths.size());
 
 		return paths;
 	}
