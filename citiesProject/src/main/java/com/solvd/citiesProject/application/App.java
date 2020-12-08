@@ -89,8 +89,9 @@ public class App {
 		
 		Point destinyOutOfPoints = new Point(500,null, 1, -37.3287, -59.135);
 		
+		System.out.println("size " + pointList.size());
 		origin = pointList.get(1);
-		destiny = pointList.get(50);
+		destiny = pointList.get(120);
 
 	
 		
@@ -128,7 +129,7 @@ public class App {
 		}
 		
 		LOGGER.info("origin: "+ origin.getId()+" destiny: " +destiny.getId() );
-
+		
 	}
 	
 

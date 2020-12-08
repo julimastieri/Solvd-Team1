@@ -2,25 +2,8 @@
 <trip>
     <paths>
         <path>
-            <id>1</id>
+            <id>5</id>
             <pointFrom>
-                <id>1</id>
-                <street>9 de Julio</street>
-                <addressNumber>345</addressNumber>
-                <latitude>-37.328973</latitude>
-                <longitude>-59.136836</longitude>
-                <city>
-                    <id>1</id>
-                    <name>Tandil</name>
-                    <postalCode>7000</postalCode>
-                    <country>
-                        <id>1</id>
-                        <name>Argentina</name>
-                        <code>54</code>
-                    </country>
-                </city>
-            </pointFrom>
-            <pointTo>
                 <id>2</id>
                 <street>Roca</street>
                 <addressNumber>1234</addressNumber>
@@ -36,6 +19,73 @@
                         <code>54</code>
                     </country>
                 </city>
+            </pointFrom>
+            <pointTo>
+                <id>16</id>
+                <street>Las heras</street>
+                <addressNumber>222</addressNumber>
+                <latitude>-37.318892</latitude>
+                <longitude>-59.147917</longitude>
+                <city>
+                    <id>1</id>
+                    <name>Tandil</name>
+                    <postalCode>7000</postalCode>
+                    <country>
+                        <id>1</id>
+                        <name>Argentina</name>
+                        <code>54</code>
+                    </country>
+                </city>
+            </pointTo>
+            <transport>
+                <id>4</id>
+                <description>Train</description>
+                <driver>
+                    <id>2</id>
+                    <name>Magali</name>
+                    <lastName>Boulanger</lastName>
+                    <identityNumber>41318123</identityNumber>
+                    <birthdate>2008-11-03T00:00:00-02:00</birthdate>
+                </driver>
+            </transport>
+            <distance>13.0</distance>
+            <bidirectional>false</bidirectional>
+        </path>
+        <path>
+            <id>144</id>
+            <pointFrom>
+                <id>16</id>
+                <street>Las heras</street>
+                <addressNumber>222</addressNumber>
+                <latitude>-37.318892</latitude>
+                <longitude>-59.147917</longitude>
+                <city>
+                    <id>1</id>
+                    <name>Tandil</name>
+                    <postalCode>7000</postalCode>
+                    <country>
+                        <id>1</id>
+                        <name>Argentina</name>
+                        <code>54</code>
+                    </country>
+                </city>
+            </pointFrom>
+            <pointTo>
+                <id>9</id>
+                <street>Gardel</street>
+                <addressNumber>354</addressNumber>
+                <latitude>-37.331102</latitude>
+                <longitude>-59.11756</longitude>
+                <city>
+                    <id>1</id>
+                    <name>Tandil</name>
+                    <postalCode>7000</postalCode>
+                    <country>
+                        <id>1</id>
+                        <name>Argentina</name>
+                        <code>54</code>
+                    </country>
+                </city>
             </pointTo>
             <transport>
                 <id>1</id>
@@ -46,23 +96,223 @@
                     <lastName>Mastieri</lastName>
                     <identityNumber>41318117</identityNumber>
                     <birthdate>2008-07-04T00:00:00-03:00</birthdate>
+                </driver>
+            </transport>
+            <distance>7.0</distance>
+            <bidirectional>false</bidirectional>
+        </path>
+        <path>
+            <id>27</id>
+            <pointFrom>
+                <id>9</id>
+                <street>Gardel</street>
+                <addressNumber>354</addressNumber>
+                <latitude>-37.331102</latitude>
+                <longitude>-59.11756</longitude>
+                <city>
+                    <id>1</id>
+                    <name>Tandil</name>
+                    <postalCode>7000</postalCode>
+                    <country>
+                        <id>1</id>
+                        <name>Argentina</name>
+                        <code>54</code>
+                    </country>
+                </city>
+            </pointFrom>
+            <pointTo>
+                <id>11</id>
+                <street>Libertad</street>
+                <addressNumber>345</addressNumber>
+                <latitude>-37.338971</latitude>
+                <longitude>-59.130542</longitude>
+                <city>
+                    <id>1</id>
+                    <name>Tandil</name>
+                    <postalCode>7000</postalCode>
+                    <country>
+                        <id>1</id>
+                        <name>Argentina</name>
+                        <code>54</code>
+                    </country>
+                </city>
+            </pointTo>
+            <transport>
+                <id>1</id>
+                <description>Train</description>
+                <driver>
+                    <id>1</id>
+                    <name>Julian</name>
+                    <lastName>Mastieri</lastName>
+                    <identityNumber>41318117</identityNumber>
+                    <birthdate>2008-07-04T00:00:00-03:00</birthdate>
+                </driver>
+            </transport>
+            <distance>8.0</distance>
+            <bidirectional>false</bidirectional>
+        </path>
+        <path>
+            <id>600</id>
+            <pointFrom>
+                <id>11</id>
+                <street>Libertad</street>
+                <addressNumber>345</addressNumber>
+                <latitude>-37.338971</latitude>
+                <longitude>-59.130542</longitude>
+                <city>
+                    <id>1</id>
+                    <name>Tandil</name>
+                    <postalCode>7000</postalCode>
+                    <country>
+                        <id>1</id>
+                        <name>Argentina</name>
+                        <code>54</code>
+                    </country>
+                </city>
+            </pointFrom>
+            <pointTo>
+                <id>139</id>
+                <street>Caseros</street>
+                <addressNumber>354</addressNumber>
+                <latitude>-33.325185</latitude>
+                <longitude>-59.121188</longitude>
+                <city>
+                    <id>5</id>
+                    <name>Cachari</name>
+                    <postalCode>7203</postalCode>
+                    <country>
+                        <id>1</id>
+                        <name>Argentina</name>
+                        <code>54</code>
+                    </country>
+                </city>
+            </pointTo>
+            <transport>
+                <id>1</id>
+                <description>Train</description>
+                <driver>
+                    <id>1</id>
+                    <name>Julian</name>
+                    <lastName>Mastieri</lastName>
+                    <identityNumber>41318117</identityNumber>
+                    <birthdate>2008-07-04T00:00:00-03:00</birthdate>
+                </driver>
+            </transport>
+            <distance>6.0</distance>
+            <bidirectional>false</bidirectional>
+        </path>
+        <path>
+            <id>582</id>
+            <pointFrom>
+                <id>139</id>
+                <street>Caseros</street>
+                <addressNumber>354</addressNumber>
+                <latitude>-33.325185</latitude>
+                <longitude>-59.121188</longitude>
+                <city>
+                    <id>5</id>
+                    <name>Cachari</name>
+                    <postalCode>7203</postalCode>
+                    <country>
+                        <id>1</id>
+                        <name>Argentina</name>
+                        <code>54</code>
+                    </country>
+                </city>
+            </pointFrom>
+            <pointTo>
+                <id>134</id>
+                <street>Monsenior</street>
+                <addressNumber>2367</addressNumber>
+                <latitude>-33.32741</latitude>
+                <longitude>-59.15143</longitude>
+                <city>
+                    <id>5</id>
+                    <name>Cachari</name>
+                    <postalCode>7203</postalCode>
+                    <country>
+                        <id>1</id>
+                        <name>Argentina</name>
+                        <code>54</code>
+                    </country>
+                </city>
+            </pointTo>
+            <transport>
+                <id>2</id>
+                <description>Bus</description>
+                <driver>
+                    <id>2</id>
+                    <name>Magali</name>
+                    <lastName>Boulanger</lastName>
+                    <identityNumber>41318123</identityNumber>
+                    <birthdate>2008-11-03T00:00:00-02:00</birthdate>
+                </driver>
+            </transport>
+            <distance>1.0</distance>
+            <bidirectional>false</bidirectional>
+        </path>
+        <path>
+            <id>553</id>
+            <pointFrom>
+                <id>134</id>
+                <street>Monsenior</street>
+                <addressNumber>2367</addressNumber>
+                <latitude>-33.32741</latitude>
+                <longitude>-59.15143</longitude>
+                <city>
+                    <id>5</id>
+                    <name>Cachari</name>
+                    <postalCode>7203</postalCode>
+                    <country>
+                        <id>1</id>
+                        <name>Argentina</name>
+                        <code>54</code>
+                    </country>
+                </city>
+            </pointFrom>
+            <pointTo>
+                <id>123</id>
+                <street>Sarmiento</street>
+                <addressNumber>2367</addressNumber>
+                <latitude>-33.330747</latitude>
+                <longitude>-59.144565</longitude>
+                <city>
+                    <id>5</id>
+                    <name>Cachari</name>
+                    <postalCode>7203</postalCode>
+                    <country>
+                        <id>1</id>
+                        <name>Argentina</name>
+                        <code>54</code>
+                    </country>
+                </city>
+            </pointTo>
+            <transport>
+                <id>7</id>
+                <description>Train</description>
+                <driver>
+                    <id>3</id>
+                    <name>Joshua</name>
+                    <lastName>Acciarri</lastName>
+                    <identityNumber>41318456</identityNumber>
+                    <birthdate>2008-02-09T00:00:00-02:00</birthdate>
                 </driver>
             </transport>
             <distance>9.0</distance>
-            <bidirectional>true</bidirectional>
+            <bidirectional>false</bidirectional>
         </path>
         <path>
-            <id>128</id>
+            <id>544</id>
             <pointFrom>
-                <id>50</id>
-                <street>Accari</street>
-                <addressNumber>235</addressNumber>
-                <latitude>-36.31651</latitude>
-                <longitude>-59.117674</longitude>
+                <id>123</id>
+                <street>Sarmiento</street>
+                <addressNumber>2367</addressNumber>
+                <latitude>-33.330747</latitude>
+                <longitude>-59.144565</longitude>
                 <city>
-                    <id>1</id>
-                    <name>Tandil</name>
-                    <postalCode>7000</postalCode>
+                    <id>5</id>
+                    <name>Cachari</name>
+                    <postalCode>7203</postalCode>
                     <country>
                         <id>1</id>
                         <name>Argentina</name>
@@ -71,15 +321,15 @@
                 </city>
             </pointFrom>
             <pointTo>
-                <id>1</id>
+                <id>121</id>
                 <street>9 de Julio</street>
                 <addressNumber>345</addressNumber>
-                <latitude>-37.328973</latitude>
+                <latitude>-33.328973</latitude>
                 <longitude>-59.136836</longitude>
                 <city>
-                    <id>1</id>
-                    <name>Tandil</name>
-                    <postalCode>7000</postalCode>
+                    <id>5</id>
+                    <name>Cachari</name>
+                    <postalCode>7203</postalCode>
                     <country>
                         <id>1</id>
                         <name>Argentina</name>
@@ -98,58 +348,8 @@
                     <birthdate>2008-07-04T00:00:00-03:00</birthdate>
                 </driver>
             </transport>
-            <distance>12.0</distance>
-            <bidirectional>true</bidirectional>
-        </path>
-        <path>
-            <id>110</id>
-            <pointFrom>
-                <id>50</id>
-                <street>Accari</street>
-                <addressNumber>235</addressNumber>
-                <latitude>-36.31651</latitude>
-                <longitude>-59.117674</longitude>
-                <city>
-                    <id>1</id>
-                    <name>Tandil</name>
-                    <postalCode>7000</postalCode>
-                    <country>
-                        <id>1</id>
-                        <name>Argentina</name>
-                        <code>54</code>
-                    </country>
-                </city>
-            </pointFrom>
-            <pointTo>
-                <id>51</id>
-                <street>Viscali</street>
-                <addressNumber>345</addressNumber>
-                <latitude>-36.316639</latitude>
-                <longitude>-59.104034</longitude>
-                <city>
-                    <id>1</id>
-                    <name>Tandil</name>
-                    <postalCode>7000</postalCode>
-                    <country>
-                        <id>1</id>
-                        <name>Argentina</name>
-                        <code>54</code>
-                    </country>
-                </city>
-            </pointTo>
-            <transport>
-                <id>1</id>
-                <description>Train</description>
-                <driver>
-                    <id>1</id>
-                    <name>Julian</name>
-                    <lastName>Mastieri</lastName>
-                    <identityNumber>41318117</identityNumber>
-                    <birthdate>2008-07-04T00:00:00-03:00</birthdate>
-                </driver>
-            </transport>
-            <distance>2.0</distance>
-            <bidirectional>true</bidirectional>
+            <distance>4.0</distance>
+            <bidirectional>false</bidirectional>
         </path>
     </paths>
     <client>
